@@ -1,8 +1,12 @@
-interface UI{
+package priceWatcherConsole;
+
+import priceWatcherModel.Item;
+
+public interface UI{
     //Drawing the UI that we are going to use to display the information
-    draw();
+    void draw();
 
     //This method is going display the item
-    addItem(Item item);
+    void addItem(Item item);
 
 }

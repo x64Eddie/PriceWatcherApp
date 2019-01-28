@@ -1,14 +1,16 @@
+package priceWatcherModel;
+
 import java.net.URL;
 import java.util.Date;
 
-class Item {
+public class Item {
     
     private String name;
     private URL url;
     private double currentPrice, startPrice;
     private Date date;
 
-    Item(String name, URL url){
+    public Item(String name, URL url){
         this.name = name;
         this.url = url;
     }
@@ -17,7 +19,7 @@ class Item {
     }
 
     //This is going to simulate the ITEM getting it from an external resource
-    Item(String name, URL url, String currentPrice, String startingPrice){
+    public Item(String name, URL url, double currentPrice, double startingPrice){
         this.name = name;
         this.url = url;
         this.currentPrice = currentPrice;
