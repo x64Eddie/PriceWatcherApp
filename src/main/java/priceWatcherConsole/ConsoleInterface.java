@@ -11,6 +11,7 @@ public class ConsoleInterface implements UI {
 
     @Override
     public void addItem(Item item) {
+        System.out.println("Testing..");
 
     }
 

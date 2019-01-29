@@ -17,6 +17,7 @@ public class Main{
         try{
             URL url = new URL("https://www.google.com");
             Item exampleItem = new Item("IMac", url);
+            currentUI.addItem(exampleItem);
         }catch(Exception e){
 
         }
