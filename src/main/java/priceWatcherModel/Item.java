@@ -7,12 +7,13 @@ public class Item {
     
     private String name;
     private URL url;
-    private double currentPrice, startPrice;
-    private Date date;
+    private double currentPrice = 1.0, startPrice = 1.0;
+    private Date date = new Date();
 
     public Item(String name, URL url){
         this.name = name;
         this.url = url;
+        
     }
     Item(URL url){
         this.url = url;
@@ -53,8 +54,8 @@ public class Item {
     /**
      * @return the date
      */
-    public Date getDate() {
-        return date;
+    public int getDate() {
+        return date.getDate();
     }
 
     public double getPriceChage(){
