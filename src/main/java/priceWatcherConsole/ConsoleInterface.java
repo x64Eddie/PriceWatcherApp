@@ -6,7 +6,7 @@ public class ConsoleInterface implements UI {
 
     @Override
     public void draw() {
-        System.out.println("Welcome to price watcher!\n\n");
+        System.out.println("\nWelcome to price watcher!\n");
     }
 
     @Override
