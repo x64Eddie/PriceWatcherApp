@@ -1,4 +1,4 @@
-package priceWatcherConsole;
+package UserInterface;
 
 import priceWatcherModel.Item;
 
