@@ -32,6 +32,7 @@ public class Main{
         else{
             main(args);
         }
+        scan.close();
 
         
         
