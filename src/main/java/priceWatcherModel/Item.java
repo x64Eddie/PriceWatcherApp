@@ -2,6 +2,7 @@ package priceWatcherModel;
 
 import java.net.URL;
 import java.util.Date;
+import java.util.Random;
 
 public class Item {
     
@@ -9,10 +10,12 @@ public class Item {
     private URL url;
     private double currentPrice = 1.0, startPrice = 1.0;
     private Date date = new Date();
+    private Random rand = new Random();
 
     public Item(String name, URL url){
         this.name = name;
         this.url = url;
+        this.currentPrice = rand.nextInt(1000);
         
     }
     Item(URL url){
@@ -25,6 +28,10 @@ public class Item {
         this.url = url;
         this.currentPrice = currentPrice;
         this.startPrice = startingPrice;
+    }
+
+    public void update(){
+        this.currentPrice += 1.0;
     }
 
     /**
