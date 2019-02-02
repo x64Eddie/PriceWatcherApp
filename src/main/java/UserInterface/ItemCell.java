@@ -1,5 +1,7 @@
 package UserInterface;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
 
@@ -17,15 +19,26 @@ public class ItemCell extends JComponent{
     private JButton itemURL;
     
     public ItemCell(Item item){
-        itemName = new JLabel();
-        itemName.setText(item.getName());
-        itemPrice = new JLabel();
-        itemPrice.setText(String.valueOf(item.getCurrentPrice()));
-        itemChanged = new JLabel();
-        itemChanged.setText(String.valueOf(item.getPriceChage()));
-        itemURL = new JButton();
-        itemURL.setText((itemURL).toString());
-        itemDate = new JLabel();
-        itemDate.setText(String.valueOf(itemDate));
+        super();
+        setForeground(Color.BLACK);
+        setVisible(true);
+        // itemName = new JLabel();
+        // itemName.setText(item.getName());
+        // itemPrice = new JLabel();
+        // itemPrice.setText(String.valueOf(item.getCurrentPrice()));
+        // itemChanged = new JLabel();
+        // itemChanged.setText(String.valueOf(item.getPriceChage()));
+        // itemURL = new JButton();
+        // itemURL.setText((itemURL).toString());
+        // itemDate = new JLabel();
+        // itemDate.setText(String.valueOf(itemDate));
     }
+
+    @Override
+    public void paintComponent(Graphics graphics)
+    {
+      graphics.setColor(Color.red);
+     // graphics.fillRect(0, 0, this.getWidth(), this.getHeight());
+    }
+
 }
