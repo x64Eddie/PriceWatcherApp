@@ -11,7 +11,7 @@ import UserInterface.*;
 public class Main{
     public static void main(String[] args){
 
-        UI currentUI = new ConsoleInterface();
+        UI currentUI = new SimpleGui();
         currentUI.draw();
         
         
