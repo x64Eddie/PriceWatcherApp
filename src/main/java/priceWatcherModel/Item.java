@@ -1,16 +1,19 @@
 package priceWatcherModel;
 
 import java.net.URL;
+import java.util.Currency;
 import java.util.Date;
 import java.util.Random;
+
+import org.apache.commons.math3.util.Decimal64;
 
 public class Item {
     
     private String name;
     private URL url;
-    private double currentPrice = 1.0, startPrice = 1.0;
+    private double currentPrice = 1200.00, startPrice = 1200.00;
     private Date date = new Date();
-    private Random rand = new Random();
+    private Random rand = new Random(3000);
 
     public Item(String name, URL url){
         this.name = name;
@@ -31,7 +34,7 @@ public class Item {
     }
 
     public void update(){
-        this.currentPrice += 1.0;
+        this.currentPrice =  Math.random() * 3000 + 100;
     }
 
     /**
@@ -66,6 +69,12 @@ public class Item {
     }
 
     public double getPriceChage(){
-        return Math.abs(this.currentPrice - this.startPrice);
+        double changed = startPrice - currentPrice;
+        double div = ((startPrice + currentPrice)/2);
+        return Math.abs((changed/div)*100);
+    }
+
+    public boolean isNegative(){
+        return !((startPrice - currentPrice)< 0);
     }
 }

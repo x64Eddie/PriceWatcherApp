@@ -9,6 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -31,6 +32,9 @@ public class ItemView extends JPanel{
         
 	/** View-page clicking listener. */
     private ClickListener listener;
+
+    private DecimalFormat formater = new DecimalFormat("#.00");
+    private DecimalFormat percentFormat = new DecimalFormat("#");
     
     /** Create a new instance. */
     public ItemView(Item item) {
@@ -56,21 +60,22 @@ public class ItemView extends JPanel{
 	public void paintComponent(Graphics g) {
         super.paintComponent(g); 
         //Dimension dim = getSize();
-        System.out.print("painted");
-        //--
-        //-- WRITE YOUR CODE HERE!
-        //--
+        item.update();
         int x = 20, y = 30;
         // g.drawImage(getImage("view.png"), x, y)
         g.drawString("Name:\t"+item.getName(), x, y);
         y += 20;
         g.drawString("\nURL:\t"+item.getUrl(), x, y);
         y += 20;
-        g.drawString("\nPrice:\t"+item.getCurrentPrice(), x, y);
-        System.out.print(item.getCurrentPrice());
+        g.drawString("\nPrice:\t$ "+formater.format(item.getCurrentPrice()), x, y);
         y += 20;
-        g.drawString("\nChange:\t"+item.getPriceChage(), x, y);
-        System.out.print(item.getPriceChage());
+        
+        g.drawString("\nChange:\t%",x,y);
+        if(item.isNegative())g.setColor(Color.RED);
+        else g.setColor(Color.GREEN);
+        g.drawString(percentFormat.format(item.getPriceChage()), x+70, y);
+        g.setColor(Color.BLACK);
+        g.drawString(" (starting Price: $"+formater.format(item.getStartPrice())+")", x+100, y);
         y += 20;
         g.drawString("\nDate:\t"+item.getDate(), x, y);
         y += 20;
@@ -78,10 +83,8 @@ public class ItemView extends JPanel{
     
     /** Return true if the given screen coordinate is inside the viewPage icon. */
     private boolean isViewPageClicked(int x, int y) {
-    	//--
-    	//-- WRITE YOUR CODE HERE
-    	//--
-    	return new Rectangle(20, 20, 30, 20).contains(x,  y);
+        Dimension d = getSize();
+    	return (x < d.width && y < d.height);
     }
         
     /** Return the image stored in the given file. */
@@ -93,6 +96,10 @@ public class ItemView extends JPanel{
             e.printStackTrace();
         }
         return null;
+    }
+
+    public Item getItem(){
+        return item;
     }
 
 }
