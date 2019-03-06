@@ -6,6 +6,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -20,63 +22,67 @@ public class SimpleGui extends JFrame implements UI {
 
     /** Default dimension of the dialog. */
     private final static Dimension DEFAULT_SIZE = new Dimension(400, 300);
-      
+
     /** Special panel to display the watched item. */
     private ItemView itemView;
-      
+
     /** Message bar to display various messages. */
     private JLabel msgBar = new JLabel(" ");
 
     /** Create a new dialog. */
     public SimpleGui() {
-    	this(DEFAULT_SIZE);
+        this(DEFAULT_SIZE);
     }
 
     /** Create a new dialog of the given screen dimension. */
     public SimpleGui(Dimension dim) {
         super("Price Watcher");
         setSize(dim);
-        
+
         configureUI();
-        //setLocationRelativeTo(null);
+        // setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);
-        //setResizable(false);
+        setResizable(false);
         showMessage("Welcome!");
     }
-  
-    /** Callback to be invoked when the refresh button is clicked. 
-     * Find the current price of the watched item and display it 
-     * along with a percentage price change. */
-    private void refreshButtonClicked(ActionEvent event) {
-    	//--
-    	//-- WRITE YOUR CODE HERE!
-    	//--
-    	showMessage("Refresh clicked!");
+
+    /**
+     * Callback to be invoked when the refresh button is clicked. Find the current
+     * price of the watched item and display it along with a percentage price
+     * change.
+     */
+    private void refreshButtonClicked(ActionEvent event) { 
+        itemView.repaint();
+        showMessage("Refresh clicked!");
     }
-    
-    /** Callback to be invoked when the view-page icon is clicked.
-     * Launch a (default) web browser by supplying the URL of
-     * the item. */
-    private void viewPageClicked() {    	
-    	//--
-    	//-- WRITE YOUR CODE HERE!
-    	//--
-    	showMessage("View clicked!");
+
+    /**
+     * Callback to be invoked when the view-page icon is clicked. Launch a (default)
+     * web browser by supplying the URL of the item.
+     */
+    private void viewPageClicked() {
+       
+        showMessage("View clicked!");
     }
-        
+
     /** Configure UI. */
     private void configureUI() {
         setLayout(new BorderLayout());
         JPanel control = makeControlPanel();
-        control.setBorder(BorderFactory.createEmptyBorder(10,16,0,16)); 
+        control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
         add(control, BorderLayout.NORTH);
         JPanel board = new JPanel();
-        board.setBorder(BorderFactory.createCompoundBorder(
-        		BorderFactory.createEmptyBorder(10,16,0,16),
-        		BorderFactory.createLineBorder(Color.GRAY)));
-        board.setLayout(new GridLayout(1,1));
-        itemView = new ItemView();
+        board.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16),
+                BorderFactory.createLineBorder(Color.GRAY)));
+        board.setLayout(new GridLayout(1, 1));
+        try {
+            itemView = new ItemView(new Item("name", new URL(
+                    "https://www.bestbuy.com/site/samsung-65-class-led-nu8000-series-2160p-smart-4k-uhd-tv-with-hdr/6199828.p?skuId=6199828")));
+        } catch (MalformedURLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         itemView.setClickListener(this::viewPageClicked);
         board.add(itemView);
         add(board, BorderLayout.CENTER);
@@ -110,7 +116,7 @@ public class SimpleGui extends JFrame implements UI {
 
     @Override
     public void draw() {
-        new SimpleGui();
+        //new SimpleGui();
     }
 
     @Override

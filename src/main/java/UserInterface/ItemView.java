@@ -13,7 +13,12 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import priceWatcherModel.Item;
+
 public class ItemView extends JPanel{
+
+    private Item item;
+
     /** Interface to notify a click on the view page icon. */
 	public interface ClickListener {
 		
@@ -28,7 +33,8 @@ public class ItemView extends JPanel{
     private ClickListener listener;
     
     /** Create a new instance. */
-    public ItemView() {
+    public ItemView(Item item) {
+        this.item = item;
     	setPreferredSize(new Dimension(100, 160));
         setBackground(Color.WHITE);
         addMouseListener(new MouseAdapter() {
@@ -50,15 +56,24 @@ public class ItemView extends JPanel{
 	public void paintComponent(Graphics g) {
         super.paintComponent(g); 
         //Dimension dim = getSize();
-        
+        System.out.print("painted");
         //--
         //-- WRITE YOUR CODE HERE!
         //--
         int x = 20, y = 30;
         // g.drawImage(getImage("view.png"), x, y)
-        g.drawString("[View]", x, y);
+        g.drawString("Name:\t"+item.getName(), x, y);
         y += 20;
-        g.drawString("Hi, I am your item!", x, y);
+        g.drawString("\nURL:\t"+item.getUrl(), x, y);
+        y += 20;
+        g.drawString("\nPrice:\t"+item.getCurrentPrice(), x, y);
+        System.out.print(item.getCurrentPrice());
+        y += 20;
+        g.drawString("\nChange:\t"+item.getPriceChage(), x, y);
+        System.out.print(item.getPriceChage());
+        y += 20;
+        g.drawString("\nDate:\t"+item.getDate(), x, y);
+        y += 20;
     }
     
     /** Return true if the given screen coordinate is inside the viewPage icon. */
