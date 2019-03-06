@@ -28,7 +28,7 @@ public class ItemView extends JPanel{
 	}
 	
 	/** Directory for image files: src/image in Eclipse. */
-	private final static String IMAGE_DIR = "/image/";
+	private final static String IMAGE_DIR = "/main/java/res/";
         
 	/** View-page clicking listener. */
     private ClickListener listener;
