@@ -1,0 +1,26 @@
+[INFO] output of locale.getdefaultlocale(): ('en_US', 'UTF-8')
+[INFO] encoding we chose in the end: UTF-8
+[INFO] Running command /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/python/infer.py -j 8 --project-root /Users/eddie/Documents/PriceWatcherApp --out /Users/eddie/Documents/PriceWatcherApp/infer-out -- gradle build
+[INFO] Path to infer script /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/python/infer.py (/usr/local/Cellar/infer/0.15.0/lib/infer/infer/lib/python/infer.py)
+[INFO] Platform: Darwin-18.5.0-x86_64-i386-64bit
+[INFO] PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:/opt/X11/bin:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS:/Users/eddie/Documents/Dev/flutter/bin
+[INFO] SHELL=/bin/bash
+[INFO] PWD=/Users/eddie/Documents/PriceWatcherApp
+[INFO] Running with:
+
+------------------------------------------------------------
+Gradle 4.10.2
+------------------------------------------------------------
+
+Build time:   2018-09-19 18:10:15 UTC
+Revision:     b4d8d5d170bb4ba516e88d7fe5647e2323d791dd
+
+Kotlin DSL:   1.0-rc-6
+Kotlin:       1.2.61
+Groovy:       2.4.15
+Ant:          Apache Ant(TM) version 1.9.11 compiled on March 23 2018
+JVM:          1.8.0_144 (Oracle Corporation 25.144-b01)
+OS:           Mac OS X 10.14.4 x86_64
+
+
+[INFO] Capture phase was successful
