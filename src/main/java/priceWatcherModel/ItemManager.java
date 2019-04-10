@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
+/**
+ * Takes care of all the adding and removing of the items
+ */
 class ItemManager {
     private List<Item> items;
 
@@ -59,6 +61,33 @@ public void update(){
  * @param name - the name of the item that is going to be removed.
  */
 public void removeItem(String name){
+
+}
+
+public void sortItemsByNameAcending(){
+
+}
+public void sortItemsByNameDecending(){
+
+}
+
+public void sortItemsByDateNewest(){
+
+}
+
+public void sortItemsByDateOldest(){
+
+}
+
+public void sortItemsByPriceChange(){
+
+}
+
+public void sortItemsByPriceLow(){
+
+}
+
+public void sortItemsByPriceHigh(){
 
 }
 

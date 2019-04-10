@@ -1,4 +1,4 @@
-package UserInterface;
+package UserInterface.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,7 +19,7 @@ import javax.swing.SwingUtilities;
 
 import priceWatcherModel.Item;
 
-public class SimpleGui extends JFrame implements UI {
+public class PriceWatcherJFrame extends JFrame implements UI {
 
     /** Default dimension of the dialog. */
     private final static Dimension DEFAULT_SIZE = new Dimension(400, 300);
@@ -31,12 +31,12 @@ public class SimpleGui extends JFrame implements UI {
     private JLabel msgBar = new JLabel(" ");
 
     /** Create a new dialog. */
-    public SimpleGui() {
+    public PriceWatcherJFrame() {
         this(DEFAULT_SIZE);
     }
 
     /** Create a new dialog of the given screen dimension. */
-    public SimpleGui(Dimension dim) {
+    public PriceWatcherJFrame(Dimension dim) {
         super("Price Watcher");
         setSize(dim);
 
