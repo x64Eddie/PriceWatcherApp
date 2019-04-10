@@ -7,6 +7,9 @@ import java.util.Random;
 
 import org.apache.commons.math3.util.Decimal64;
 
+/**
+ * Represents the Item that the user is going to add to the UI
+ */
 public class Item {
     
     private String name;

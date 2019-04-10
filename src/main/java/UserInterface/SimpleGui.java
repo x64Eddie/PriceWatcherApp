@@ -40,7 +40,6 @@ public class SimpleGui extends JFrame implements UI {
         super("Price Watcher");
         setSize(dim);
 
-        configureUI();
         // setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);
@@ -70,29 +69,6 @@ public class SimpleGui extends JFrame implements UI {
             e.printStackTrace();
         }
         showMessage("View clicked!");
-    }
-
-    /** Configure UI. */
-    private void configureUI() {
-        setLayout(new BorderLayout());
-        JPanel control = makeControlPanel();
-        control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
-        add(control, BorderLayout.NORTH);
-        JPanel board = new JPanel();
-        board.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16),
-                BorderFactory.createLineBorder(Color.GRAY)));
-        board.setLayout(new GridLayout(1, 1));
-        try {
-            itemView = new ItemView(new Item("Sony Tv", new URL(
-                    "https://www.bestbuy.com/site/samsung-65-class-led-nu8000-series-2160p-smart-4k-uhd-tv-with-hdr/6199828.p?skuId=6199828")));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        itemView.setClickListener(this::viewPageClicked);
-        board.add(itemView);
-        add(board, BorderLayout.CENTER);
-        msgBar.setBorder(BorderFactory.createEmptyBorder(10,16,10,0));
-        add(msgBar, BorderLayout.SOUTH);
     }
       
     /** Create a control panel consisting of a refresh button. */
@@ -127,6 +103,29 @@ public class SimpleGui extends JFrame implements UI {
     @Override
     public void addItem(Item item) {
 
+    }
+
+    @Override
+    public void configureUI() {
+        setLayout(new BorderLayout());
+        JPanel control = makeControlPanel();
+        control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
+        add(control, BorderLayout.NORTH);
+        JPanel board = new JPanel();
+        board.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16),
+                BorderFactory.createLineBorder(Color.GRAY)));
+        board.setLayout(new GridLayout(1, 1));
+        try {
+            itemView = new ItemView(new Item("Sony Tv", new URL(
+                    "https://www.bestbuy.com/site/samsung-65-class-led-nu8000-series-2160p-smart-4k-uhd-tv-with-hdr/6199828.p?skuId=6199828")));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        itemView.setClickListener(this::viewPageClicked);
+        board.add(itemView);
+        add(board, BorderLayout.CENTER);
+        msgBar.setBorder(BorderFactory.createEmptyBorder(10,16,10,0));
+        add(msgBar, BorderLayout.SOUTH);
     }
    
 
