@@ -1,102 +1,248 @@
-[99176][environment] CWD = /Users/eddie/Documents/PriceWatcherApp
-[99176][environment] No .inferconfig file found
-[99176][environment] Project root = /Users/eddie/Documents/PriceWatcherApp
-[99176][environment] INFER_ARGS =   @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.0af5f4
-[99176][environment]   ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.0af5f4':
-[99176][environment]     run
-[99176][environment]   
-[99176][environment] command line arguments:   infer run -- gradle buildAnalyzer: checkers
-[99176][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
-[99176][environment] Infer log identifier is 
+[57848][environment] CWD = /Users/eddie/Documents/PriceWatcherApp
+[57848][environment] No .inferconfig file found
+[57848][environment] Project root = /Users/eddie/Documents/PriceWatcherApp
+[57848][environment] INFER_ARGS =   @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.fb2cc7
+[57848][environment]   ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.fb2cc7':
+[57848][environment]     run
+[57848][environment]   
+[57848][environment] command line arguments:   infer run -- gradle buildAnalyzer: checkers
+[57848][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[57848][environment] Infer log identifier is 
 Infer version v0.15.0
-[99176][environment] Copyright 2009 - present Facebook. All Rights Reserved.
-[99176][environment] 
-[99176][   progress] Capturing in gradle mode...
+[57848][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[57848][environment] 
+[57848][   progress] Capturing in gradle mode...
 
-[99221][environment] CWD = /Users/eddie/Documents/PriceWatcherApp
-[99221][environment] No .inferconfig file found
-[99221][environment] Project root = /Users/eddie/Documents/PriceWatcherApp
-[99221][environment] INFER_ARGS =   @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.8e6741
-[99221][environment]   ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.8e6741':
-[99221][environment]     @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.0af5f4 capture
-[99221][environment]     --continue
-[99221][environment]     ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.0af5f4':
-[99221][environment]       run
-[99221][environment]     
-[99221][environment]   
-[99221][environment] command line arguments:   /usr/local/Cellar/infer/0.15.0/lib/infer/infer/lib/python/inferlib/../../../bin/infer
-[99221][environment]                           capture --continue -- javac -source 1.8 -target 1.8
-[99221][environment]                           -d
-[99221][environment]                           /Users/eddie/Documents/PriceWatcherApp/build/classes/java/main
-[99221][environment]                           -g -sourcepath  -proc:none -XDuseUnsharedTable=true
-[99221][environment]                           -classpath
-[99221][environment]                           /Users/eddie/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/e4ba98f1d4b3c80ec46392f25e094a6a2e58fcbf/commons-math3-3.6.1.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/23.0/c947004bb13d18182be60077ade044099e4f26f1/guava-23.0.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/c0df91c5b9c98ebd28eec6764cb3416c195aec20/rxjava-2.2.6.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.0.18/5f65affce1684999e2f4024983835efc3504012e/error_prone_annotations-2.0.18.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/976d8d30bebc251db406f2bdb3eb01962b5685b3/j2objc-annotations-1.1.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.14/775b7e22fb10026eed3f86e8dc556dfafe35f2d5/animal-sniffer-annotations-1.14.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.2/323964c36556eb0e6209f65c1cef72b53b461ab8/reactive-streams-1.0.2.jar
-[99221][environment]                           @/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_fnLl7Z.txt
-[99221][environment]   ++Contents of '/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_fnLl7Z.txt':
-[99221][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/ConsoleInterface.java
-[99221][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/SimpleGui.java
-[99221][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/UI.java
-[99221][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/ItemView.java
-[99221][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherConsole/Main.java
-[99221][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/Item.java
-[99221][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/PriceFinder.java
-[99221][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/ItemFactory.java
-[99221][environment]   
-[99221][environment] Analyzer: capture
-[99221][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
-[99221][      debug] Current working directory: '/Users/eddie/Documents/PriceWatcherApp'
-[99221][      debug] Trying to execute: javac '-J-Duser.language=en' '@/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_fnLl7Z.txt' '@/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args_.tmp.069892' 2>'/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/javac.tmp.3412e5.out'
-[99221][      debug] *** Success. Logs:
-[99221][      debug] Translating 8 source files (10 classes)
-[99221][      debug] done capturing all files
-[99221][environment] Infer log identifier is 
+[57884][environment] CWD = /Users/eddie/Documents/PriceWatcherApp
+[57884][environment] No .inferconfig file found
+[57884][environment] Project root = /Users/eddie/Documents/PriceWatcherApp
+[57884][environment] INFER_ARGS =   @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.d1df2b
+[57884][environment]   ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.d1df2b':
+[57884][environment]     @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.fb2cc7 capture
+[57884][environment]     --continue
+[57884][environment]     ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.fb2cc7':
+[57884][environment]       run
+[57884][environment]     
+[57884][environment]   
+[57884][environment] command line arguments:   /usr/local/Cellar/infer/0.15.0/lib/infer/infer/lib/python/inferlib/../../../bin/infer
+[57884][environment]                           capture --continue -- javac -source 1.8 -target 1.8
+[57884][environment]                           -d
+[57884][environment]                           /Users/eddie/Documents/PriceWatcherApp/build/classes/java/main
+[57884][environment]                           -g -sourcepath  -proc:none -XDuseUnsharedTable=true
+[57884][environment]                           -classpath
+[57884][environment]                           /Users/eddie/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/e4ba98f1d4b3c80ec46392f25e094a6a2e58fcbf/commons-math3-3.6.1.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/23.0/c947004bb13d18182be60077ade044099e4f26f1/guava-23.0.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/c0df91c5b9c98ebd28eec6764cb3416c195aec20/rxjava-2.2.6.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.0.18/5f65affce1684999e2f4024983835efc3504012e/error_prone_annotations-2.0.18.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/976d8d30bebc251db406f2bdb3eb01962b5685b3/j2objc-annotations-1.1.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.14/775b7e22fb10026eed3f86e8dc556dfafe35f2d5/animal-sniffer-annotations-1.14.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.2/323964c36556eb0e6209f65c1cef72b53b461ab8/reactive-streams-1.0.2.jar
+[57884][environment]                           @/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_8fDWZp.txt
+[57884][environment]   ++Contents of '/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_8fDWZp.txt':
+[57884][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/ConsoleInterface.java
+[57884][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/PriceWatcherJFrame.java
+[57884][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ControlPanel.java
+[57884][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ItemView.java
+[57884][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/UI.java
+[57884][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherConsole/Main.java
+[57884][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/Item.java
+[57884][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/PriceFinder.java
+[57884][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/ItemManager.java
+[57884][environment]   
+[57884][environment] Analyzer: capture
+[57884][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[57884][      debug] Current working directory: '/Users/eddie/Documents/PriceWatcherApp'
+[57884][      debug] Trying to execute: javac '-J-Duser.language=en' '@/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_8fDWZp.txt' '@/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args_.tmp.c299fd' 2>'/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/javac.tmp.63320c.out'
+[57884][      debug] *** Failed: exited with code 1!
+[57884][      debug] 
+[57884][      debug] Trying to execute: javac '@/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_8fDWZp.txt' '@/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args_.tmp.c299fd' 2>'/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/javac.tmp.63320c.out'
+[57884][   user err] 
+*** Failed to execute compilation command: exited with code 1
+*** Command: javac '@/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_8fDWZp.txt' '@/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args_.tmp.c299fd'
+*** Output:
+[parsing started RegularFileObject[/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/ConsoleInterface.java]]
+[parsing completed 17ms]
+[parsing started RegularFileObject[/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/PriceWatcherJFrame.java]]
+[parsing completed 4ms]
+[parsing started RegularFileObject[/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ControlPanel.java]]
+[parsing completed 3ms]
+[parsing started RegularFileObject[/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ItemView.java]]
+[parsing completed 3ms]
+[parsing started RegularFileObject[/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/UI.java]]
+[parsing completed 0ms]
+[parsing started RegularFileObject[/Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherConsole/Main.java]]
+[parsing completed 1ms]
+[parsing started RegularFileObject[/Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/Item.java]]
+[parsing completed 2ms]
+[parsing started RegularFileObject[/Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/PriceFinder.java]]
+[parsing completed 0ms]
+[parsing started RegularFileObject[/Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/ItemManager.java]]
+[parsing completed 1ms]
+[search path for source files: ]
+[search path for class files: /Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/resources.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/sunrsasign.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/jsse.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/jce.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/charsets.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/jfr.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/classes,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/sunec.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/nashorn.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/cldrdata.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/jfxrt.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/dnsns.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/localedata.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/jaccess.jar,/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/ext/zipfs.jar,/System/Library/Java/Extensions/MRJToolkit.jar,/Users/eddie/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/e4ba98f1d4b3c80ec46392f25e094a6a2e58fcbf/commons-math3-3.6.1.jar,/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/23.0/c947004bb13d18182be60077ade044099e4f26f1/guava-23.0.jar,/Users/eddie/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/c0df91c5b9c98ebd28eec6764cb3416c195aec20/rxjava-2.2.6.jar,/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar,/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.0.18/5f65affce1684999e2f4024983835efc3504012e/error_prone_annotations-2.0.18.jar,/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/976d8d30bebc251db406f2bdb3eb01962b5685b3/j2objc-annotations-1.1.jar,/Users/eddie/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.14/775b7e22fb10026eed3f86e8dc556dfafe35f2d5/animal-sniffer-annotations-1.14.jar,/Users/eddie/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.2/323964c36556eb0e6209f65c1cef72b53b461ab8/reactive-streams-1.0.2.jar]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Object.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/net/URL.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/Currency.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/Date.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/Random.class)]]
+[loading ZipFileIndexFileObject[/Users/eddie/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/e4ba98f1d4b3c80ec46392f25e094a6a2e58fcbf/commons-math3-3.6.1.jar(org/apache/commons/math3/util/Decimal64.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/String.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/BorderLayout.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/Color.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/Dimension.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/FlowLayout.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/GridLayout.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/event/ActionEvent.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/io/IOException.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/net/MalformedURLException.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/BorderFactory.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/JButton.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/JFrame.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/JLabel.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/JPanel.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/SwingUtilities.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/WindowConstants.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/accessibility/Accessible.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/RootPaneContainer.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/TransferHandler.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/TransferHandler$HasGetTransferHandler.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/io/Serializable.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/Frame.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/MenuContainer.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/Window.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/Container.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/Component.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/image/ImageObserver.class)]]
+/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/PriceWatcherJFrame.java:22: error: cannot find symbol
+public class PriceWatcherJFrame extends JFrame implements UI {
+                                                          ^
+  symbol: class UI
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/Graphics.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/Image.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/Rectangle.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/event/MouseAdapter.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/event/MouseEvent.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/text/DecimalFormat.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/imageio/ImageIO.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/JComponent.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/event/ActionListener.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/event/MouseListener.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/ArrayList.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/Arrays.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/HashMap.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/List.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/Map.class)]]
+[loading ZipFileIndexFileObject[/Users/eddie/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/c0df91c5b9c98ebd28eec6764cb3416c195aec20/rxjava-2.2.6.jar(io/reactivex/functions/Action.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Enum.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Comparable.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/FunctionalInterface.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/regex/Matcher.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/regex/Pattern.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Override.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Annotation.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/beans/ConstructorProperties.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Retention.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/RetentionPolicy.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/Target.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/annotation/ElementType.class)]]
+[checking UserInterface.ConsoleInterface]
+/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/ConsoleInterface.java:5: error: ConsoleInterface is not abstract and does not override abstract method configureUI() in UI
+public class ConsoleInterface implements UI {
+       ^
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/AutoCloseable.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Byte.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Character.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Short.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Long.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Float.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Integer.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Double.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Boolean.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Void.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/System.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/io/PrintStream.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Appendable.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/io/Closeable.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/io/FilterOutputStream.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/io/OutputStream.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/io/Flushable.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/CharSequence.class)]]
+[checking UserInterface.UI]
+[checking priceWatcherModel.Item]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Math.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Cloneable.class)]]
+[checking UserInterface.GUI.PriceWatcherJFrame]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/Icon.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/GraphicsConfiguration.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/net/URI.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/Desktop.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Exception.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Throwable.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/LayoutManager.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/Action.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/AbstractButton.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/ItemSelectable.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/SwingConstants.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/EventListener.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/PopupMenu.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Thread.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/sun/misc/Contended.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Runnable.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/InterruptedException.class)]]
+/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/PriceWatcherJFrame.java:98: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/PriceWatcherJFrame.java:103: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/PriceWatcherJFrame.java:108: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/LayoutManager2.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/border/Border.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/border/CompoundBorder.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/swing/border/AbstractBorder.class)]]
+[checking UserInterface.GUI.ItemView]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/event/MouseWheelListener.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/event/MouseMotionListener.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/event/InputEvent.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/event/ComponentEvent.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/AWTEvent.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/EventObject.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/text/AttributedCharacterIterator.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/text/NumberFormat.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/text/Format.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Class.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/GenericDeclaration.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/AnnotatedElement.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/reflect/Type.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/javax/imageio/stream/ImageInputStream.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/io/InputStream.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/io/File.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/awt/image/BufferedImage.class)]]
+[checking UserInterface.GUI.ControlPanel]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/AbstractMap.class)]]
+[checking UserInterface.GUI.AvailableButtons]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/CloneNotSupportedException.class)]]
+[checking UserInterface.GUI.ControlPanelListener]
+[checking priceWatcherConsole.Main]
+/Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherConsole/Main.java:13: error: cannot find symbol
+        UI currentUI = new SimpleGui();
+                           ^
+  symbol:   class SimpleGui
+  location: class Main
+[checking priceWatcherModel.PriceFinder]
+[checking priceWatcherModel.ItemManager]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/Collection.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/AbstractList.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/AbstractCollection.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/lang/Iterable.class)]]
+[loading ZipFileIndexFileObject[/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/lib/ct.sym(META-INF/sym/rt.jar/java/util/regex/MatchResult.class)]]
+[total 404ms]
+Note: /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/Item.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+6 errors
 
-[99229][environment] CWD = /Users/eddie/Documents/PriceWatcherApp
-[99229][environment] No .inferconfig file found
-[99229][environment] Project root = /Users/eddie/Documents/PriceWatcherApp
-[99229][environment] INFER_ARGS =   @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.38e0bd
-[99229][environment]   ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.38e0bd':
-[99229][environment]     @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.0af5f4 capture
-[99229][environment]     --continue
-[99229][environment]     ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.0af5f4':
-[99229][environment]       run
-[99229][environment]     
-[99229][environment]   
-[99229][environment] command line arguments:   /usr/local/Cellar/infer/0.15.0/lib/infer/infer/lib/python/inferlib/../../../bin/infer
-[99229][environment]                           capture --continue -- javac -source 1.8 -target 1.8
-[99229][environment]                           -d
-[99229][environment]                           /Users/eddie/Documents/PriceWatcherApp/build/classes/java/test
-[99229][environment]                           -g -sourcepath  -proc:none -XDuseUnsharedTable=true
-[99229][environment]                           -classpath
-[99229][environment]                           /Users/eddie/Documents/PriceWatcherApp/build/classes/java/main:/Users/eddie/Documents/PriceWatcherApp/build/resources/main:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/e4ba98f1d4b3c80ec46392f25e094a6a2e58fcbf/commons-math3-3.6.1.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/23.0/c947004bb13d18182be60077ade044099e4f26f1/guava-23.0.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/c0df91c5b9c98ebd28eec6764cb3416c195aec20/rxjava-2.2.6.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.0.18/5f65affce1684999e2f4024983835efc3504012e/error_prone_annotations-2.0.18.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/976d8d30bebc251db406f2bdb3eb01962b5685b3/j2objc-annotations-1.1.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.14/775b7e22fb10026eed3f86e8dc556dfafe35f2d5/animal-sniffer-annotations-1.14.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.2/323964c36556eb0e6209f65c1cef72b53b461ab8/reactive-streams-1.0.2.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar
-[99229][environment]                           @/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_YS5PWM.txt
-[99229][environment]   ++Contents of '/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_YS5PWM.txt':
-[99229][environment]     /Users/eddie/Documents/PriceWatcherApp/src/test/java/LibraryTest.java
-[99229][environment]   
-[99229][environment] Analyzer: capture
-[99229][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
-[99229][      debug] Current working directory: '/Users/eddie/Documents/PriceWatcherApp'
-[99229][      debug] Trying to execute: javac '-J-Duser.language=en' '@/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_YS5PWM.txt' '@/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args_.tmp.fc3da3' 2>'/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/javac.tmp.ae7b78.out'
-[99229][      debug] *** Success. Logs:
-[99229][      debug] Translating 1 source files (1 classes)
-[99229][      debug] done capturing all files
-[99229][environment] Infer log identifier is 
-[99176][   progress] Found 9 source files to analyze in /Users/eddie/Documents/PriceWatcherApp/infer-out
-[99176][   progress] Starting analysis...
-[99176][   progress] 
-[99176][   progress] legend:
-[99176][   progress]   "F" analyzing a file
-[99176][   progress]   "." analyzing a procedure
-[99176][   progress] 
-[99176][   progress] 
-[99176][environment] Parallel jobs: 8
-[99176][   progress] FFF
-F
-F
+*** Infer needs a working compilation command to run.
 
-FF
-F
-
-
-[99239][   progress] .[99237][   progress] .[99244][   progress] .[99240][   progress] .[99242][   progress] ..[99238][   progress] ...F[99243][   progress] .
-[99241][   progress] ...............................[99245][   progress] .................
+[57884][   user err] 
+[57884][environment] Infer log identifier is 
+[57848][ intern err]   /usr/local/Cellar/infer/0.15.0/lib/infer/infer/bin/../lib/python/infer.py
+  -j 8 --project-root /Users/eddie/Documents/PriceWatcherApp --out
+  /Users/eddie/Documents/PriceWatcherApp/infer-out -- gradle build:
+  exited with code 1
+[57848][ intern err] 

@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
+import UserInterface.UI;
 import priceWatcherModel.Item;
 
 public class PriceWatcherJFrame extends JFrame implements UI {
@@ -96,8 +97,13 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     }
 
     @Override
+    public void configureUI() {
+
+    }
+
+    @Override
     public void draw() {
-        //new SimpleGui();
+
     }
 
     @Override
@@ -105,28 +111,38 @@ public class PriceWatcherJFrame extends JFrame implements UI {
 
     }
 
-    @Override
-    public void configureUI() {
-        setLayout(new BorderLayout());
-        JPanel control = makeControlPanel();
-        control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
-        add(control, BorderLayout.NORTH);
-        JPanel board = new JPanel();
-        board.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16),
-                BorderFactory.createLineBorder(Color.GRAY)));
-        board.setLayout(new GridLayout(1, 1));
-        try {
-            itemView = new ItemView(new Item("Sony Tv", new URL(
-                    "https://www.bestbuy.com/site/samsung-65-class-led-nu8000-series-2160p-smart-4k-uhd-tv-with-hdr/6199828.p?skuId=6199828")));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        itemView.setClickListener(this::viewPageClicked);
-        board.add(itemView);
-        add(board, BorderLayout.CENTER);
-        msgBar.setBorder(BorderFactory.createEmptyBorder(10,16,10,0));
-        add(msgBar, BorderLayout.SOUTH);
-    }
+    // @Override
+    // public void draw() {
+    //     //new SimpleGui();
+    // }
+
+    // @Override
+    // public void addItem(Item item) {
+
+    // }
+
+    // @Override
+    // public void configureUI() {
+    //     setLayout(new BorderLayout());
+    //     JPanel control = makeControlPanel();
+    //     control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
+    //     add(control, BorderLayout.NORTH);
+    //     JPanel board = new JPanel();
+    //     board.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16),
+    //             BorderFactory.createLineBorder(Color.GRAY)));
+    //     board.setLayout(new GridLayout(1, 1));
+    //     try {
+    //         itemView = new ItemView(new Item("Sony Tv", new URL(
+    //                 "https://www.bestbuy.com/site/samsung-65-class-led-nu8000-series-2160p-smart-4k-uhd-tv-with-hdr/6199828.p?skuId=6199828")));
+    //     } catch (MalformedURLException e) {
+    //         e.printStackTrace();
+    //     }
+    //     itemView.setClickListener(this::viewPageClicked);
+    //     board.add(itemView);
+    //     add(board, BorderLayout.CENTER);
+    //     msgBar.setBorder(BorderFactory.createEmptyBorder(10,16,10,0));
+    //     add(msgBar, BorderLayout.SOUTH);
+    // }
    
 
 }

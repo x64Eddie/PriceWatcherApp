@@ -1,19 +1,13 @@
 package UserInterface.GUI;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
-
-import io.reactivex.functions.Action;
 
 /**
  * Represents all the controls that are located in the top of the JFrame, these
@@ -80,10 +74,6 @@ class ControlPanel extends JPanel {
     public void increaseSize(JButton button) {
 
     }
-
-
-
-
 }
 
 /**

@@ -17,4 +17,9 @@ public class ConsoleInterface implements UI {
 
     }
 
+    @Override
+    public void configureUI() {
+
+    }
+
 }

@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -17,6 +16,8 @@ import javax.swing.JPanel;
 import priceWatcherModel.Item;
 
 public class ItemView extends JPanel{
+
+    private static final long serialVersionUID = 1L;
 
     private Item item;
 
