@@ -1,10 +1,12 @@
-package priceWatcherModel;
+package UserInterface.GUI;
 
 import java.awt.Component;
 
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
+
+import priceWatcherModel.Item;
 
 /*
  * Custom renderer that is going to render a custom label for displaying the item

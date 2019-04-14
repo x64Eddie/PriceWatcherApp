@@ -1,4 +1,4 @@
-package priceWatcherModel;
+package UserInterface.GUI;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -7,6 +7,7 @@ import java.text.DecimalFormat;
 import javax.swing.JComponent;
 
 import io.reactivex.annotations.NonNull;
+import priceWatcherModel.Item;
 
 /**
  * Represents the View representation of the item, this is going to be the UI of the Item
