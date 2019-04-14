@@ -1,16 +1,11 @@
 package UserInterface.GUI;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
+
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -63,13 +58,13 @@ public class PriceWatcherJFrame extends JFrame implements UI {
      * web browser by supplying the URL of the item.
      */
     private void viewPageClicked() {
-        try {
-            java.awt.Desktop.getDesktop()
-            .browse(java.net.URI.create(itemView.getItem().getUrl().toString()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        showMessage("View clicked!");
+        // try {
+        //     java.awt.Desktop.getDesktop()
+        //     .browse(java.net.URI.create(itemView.getItem().getUrl().toString()));
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        // }
+        // showMessage("View clicked!");
     }
       
     /** Create a control panel consisting of a refresh button. */

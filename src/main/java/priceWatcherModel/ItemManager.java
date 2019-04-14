@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 /**
  * Takes care of all the adding and removing of the items
  */
-class ItemManager {
+public class ItemManager {
     private List<Item> items;
 
 public ItemManager(){
