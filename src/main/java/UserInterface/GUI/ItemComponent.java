@@ -1,6 +1,7 @@
 package UserInterface.GUI;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.text.DecimalFormat;
 
@@ -21,39 +22,48 @@ class ItemComponent extends JComponent {
     private DecimalFormat percentFormat;
     private Item item;
 
-    /**
-     * Setting the item in order for the component to extract the information from
-     * the item.
-     * 
-     * @param item - the item that has the information that its going to display.
-     */
+    public ItemComponent() {
+        this.formater = new DecimalFormat("#.00");
+        this.percentFormat = new DecimalFormat("#");
+    }
+
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(100, 200);
+    }
+
     public void setItem(@NonNull Item item) {
         this.item = item;
     }
 
-    @Override
-    protected void paintComponent(Graphics g) {
-        // we are going to paint the custom Item
-        if (item != null) {
-            int x = 20, y = 30;
-            g.drawString("Name:\t" + item.getName(), x, y);
-            y += 20;
-            g.drawString("\nURL:\t" + item.getUrl(), x, y);
-            y += 20;
-            g.drawString("\nPrice:\t$ " + formater.format(item.getCurrentPrice()), x, y);
-            y += 20;
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        int x = 20, y = 30;
+        item.update();
+        g.drawString("Name:\t" + item.getName(), x, y);
+        y += 20;
 
-            g.drawString("\nChange:\t%", x, y);
-            if (item.isNegative())
-                g.setColor(Color.RED);
-            else
-                g.setColor(Color.GREEN);
-            g.drawString(percentFormat.format(item.getPriceChage()), x + 70, y);
-            g.setColor(Color.BLACK);
-            g.drawString(" (starting Price: $" + formater.format(item.getStartPrice()) + ")", x + 100, y);
-            y += 20;
-            g.drawString("\nDate:\t" + item.getDate(), x, y);
-            y += 20;
-        }
+        g.drawString("\nURL:\t" + item.getUrl(), x, y);
+        y += 20;
+        g.drawString("\nPrice:\t$ " + formater.format(item.getCurrentPrice()), x, y);
+        y += 20;
+
+        g.drawString("\nChange:\t%", x, y);
+        if (item.isNegative())
+            g.setColor(Color.RED);
+        else
+            g.setColor(Color.GREEN);
+        g.drawString(percentFormat.format(item.getPriceChage()), x + 70, y);
+        g.setColor(Color.BLACK);
+        g.drawString(" (starting Price: $" + formater.format(item.getStartPrice()) + ")", x + 100, y);
+        y += 20;
+        g.drawString("\nDate:\t" + item.getDate(), x, y);
+        y += 20;
+    }
+
+    public void paint(Graphics g) {
+        super.paint(g);
+        paintComponent(g);
+        paintChildren(g);
     }
 }

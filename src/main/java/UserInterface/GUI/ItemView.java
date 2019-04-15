@@ -25,7 +25,6 @@ public class ItemView extends JPanel{
     private JList<Item> jList;
     
     public ItemView(ItemManager itemManager) {
-        List<Item> items = itemManager.getItems();
 
         setPreferredSize(new Dimension(100, 160));
         setBackground(Color.WHITE);
@@ -35,10 +34,10 @@ public class ItemView extends JPanel{
         add(scrollPanel);
 
         listModel = new DefaultListModel<>();
-        for(Item item: items)listModel.addElement(item);
+        for(Item item: itemManager.getItems())listModel.addElement(item);
         jList = new JList<>(listModel);
         jList.setCellRenderer(new ItemRenderer());
-        
+
         scrollPanel.add(jList);
     }
         

@@ -1,9 +1,0 @@
-/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/ConsoleInterface.java
-/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/PriceWatcherJFrame.java
-/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ControlPanel.java
-/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ItemView.java
-/Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/UI.java
-/Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherConsole/Main.java
-/Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/Item.java
-/Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/PriceFinder.java
-/Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/ItemManager.java
