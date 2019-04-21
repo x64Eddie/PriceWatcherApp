@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.text.DecimalFormat;
 
 import javax.swing.JComponent;
+import javax.swing.JPanel;
 
 import io.reactivex.annotations.NonNull;
 import priceWatcherModel.Item;
@@ -14,7 +15,7 @@ import priceWatcherModel.Item;
  * Represents the View representation of the item, this is going to be the UI of
  * the Item
  */
-class ItemComponent extends JComponent {
+class ItemComponent extends JPanel {
 
     private static final long serialVersionUID = 1L;
     //private final static String IMAGE_DIR = "/main/java/res/";
@@ -25,11 +26,18 @@ class ItemComponent extends JComponent {
     public ItemComponent() {
         this.formater = new DecimalFormat("#.00");
         this.percentFormat = new DecimalFormat("#");
+
     }
 
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(100, 200);
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        setBackground(Color.BLACK);
     }
 
     public void setItem(@NonNull Item item) {

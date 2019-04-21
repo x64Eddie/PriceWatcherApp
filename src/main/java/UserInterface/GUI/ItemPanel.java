@@ -2,9 +2,6 @@ package UserInterface.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.ScrollPane;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -12,6 +9,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
 
 import priceWatcherModel.Item;
 import priceWatcherModel.*;
@@ -33,7 +31,6 @@ public class ItemPanel extends JPanel {
 
     public ItemPanel(ItemManager itemManager) {
         super(new BorderLayout());
-        setBackground(Color.WHITE);
         this.itemManager = itemManager;
 
         try {
@@ -56,9 +53,9 @@ public class ItemPanel extends JPanel {
                     "https://www.bestbuy.com/site/samsung-65-class-led-nu8000-series-2160p-smart-4k-uhd-tv-with-hdr/6199828.p?skuId=6199828"),
                     300, 200));
             listModel = new DefaultListModel<>();
-            for (Item item : itemManager.getItems())
-                listModel.addElement(item);
+            for (Item item : itemManager.getItems())listModel.addElement(item);
             jList = new JList<>(listModel);
+            jList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             jList.setCellRenderer(new ItemRenderer());
             
             scrollPanel = new JScrollPane(jList);

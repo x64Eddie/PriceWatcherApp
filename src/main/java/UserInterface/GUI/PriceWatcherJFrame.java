@@ -111,14 +111,16 @@ public class PriceWatcherJFrame extends JFrame implements UI {
         JPanel control = makeControlPanel();
         control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
         add(control, BorderLayout.NORTH);
-        add(new ItemPanel());
+        ItemPanel itemPanel = new ItemPanel();
+        itemPanel.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
+        add(itemPanel);
         msgBar.setBorder(BorderFactory.createEmptyBorder(10, 16, 10, 0));
         add(msgBar, BorderLayout.SOUTH);
     }
 
     @Override
     public void draw() {
-        System.out.print("obj");
+
     }
 
     @Override

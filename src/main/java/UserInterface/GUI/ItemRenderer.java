@@ -1,5 +1,6 @@
 package UserInterface.GUI;
 
+import java.awt.Color;
 import java.awt.Component;
 
 
@@ -21,6 +22,9 @@ class ItemRenderer extends ItemComponent implements ListCellRenderer<Item> {
         JList<? extends Item> list, Item item, int index, boolean isSelected,
             boolean cellHasFocus) {
         setItem(item);
+        if (isSelected)setBackground(new Color(0xFFFFCC));
+        else setBackground(list.getBackground());
+        
         return this;
     }
 
