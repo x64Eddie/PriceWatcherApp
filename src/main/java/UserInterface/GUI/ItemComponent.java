@@ -3,9 +3,14 @@ package UserInterface.GUI;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.text.DecimalFormat;
 
-import javax.swing.JComponent;
+import javax.imageio.ImageIO;
+
 import javax.swing.JPanel;
 
 import io.reactivex.annotations.NonNull;
@@ -18,7 +23,7 @@ import priceWatcherModel.Item;
 class ItemComponent extends JPanel {
 
     private static final long serialVersionUID = 1L;
-    //private final static String IMAGE_DIR = "/main/java/res/";
+    private final static String IMAGE_DIR = ".//src//res//web.png";
     private DecimalFormat formater;
     private DecimalFormat percentFormat;
     private Item item;
@@ -34,12 +39,6 @@ class ItemComponent extends JPanel {
         return new Dimension(100, 200);
     }
 
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        setBackground(Color.BLACK);
-    }
-
     public void setItem(@NonNull Item item) {
         this.item = item;
     }
@@ -47,7 +46,17 @@ class ItemComponent extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
         // paintComponent(g);
-        int x = 20, y = 30;
+        int x = 10, y =15;
+        BufferedImage image;
+        try {                
+             image = ImageIO.read(new File(IMAGE_DIR).getAbsoluteFile());
+             g.drawImage(image, 0, 0,20,20, this); 
+            
+         } catch (IOException ex) {
+              // handle exception...
+              ex.printStackTrace();
+         }
+        x = 20; y = 30;
         item.update();
         g.drawString(" Name:\t\t\t\t" + item.getName(), x, y);
         y += 20;

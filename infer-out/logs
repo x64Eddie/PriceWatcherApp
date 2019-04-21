@@ -1,62 +1,78 @@
-[97864][environment] CWD = /Users/eddie/Documents/PriceWatcherApp
-[97864][environment] No .inferconfig file found
-[97864][environment] Project root = /Users/eddie/Documents/PriceWatcherApp
-[97864][environment] INFER_ARGS =   @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.c01ee7
-[97864][environment]   ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.c01ee7':
-[97864][environment]     run
-[97864][environment]   
-[97864][environment] command line arguments:   infer run -- gradle buildAnalyzer: checkers
-[97864][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
-[97864][environment] Infer log identifier is 
+[1508][environment] CWD = /Users/eddie/Documents/PriceWatcherApp
+[1508][environment] No .inferconfig file found
+[1508][environment] Project root = /Users/eddie/Documents/PriceWatcherApp
+[1508][environment] INFER_ARGS =   @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.465cb1
+[1508][environment]   ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.465cb1':
+[1508][environment]     run
+[1508][environment]   
+[1508][environment] command line arguments:   infer run -- gradle buildAnalyzer: checkers
+[1508][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[1508][environment] Infer log identifier is 
 Infer version v0.15.0
-[97864][environment] Copyright 2009 - present Facebook. All Rights Reserved.
-[97864][environment] 
-[97864][   progress] Capturing in gradle mode...
+[1508][environment] Copyright 2009 - present Facebook. All Rights Reserved.
+[1508][environment] 
+[1508][   progress] Capturing in gradle mode...
 
-[97898][environment] CWD = /Users/eddie/Documents/PriceWatcherApp
-[97898][environment] No .inferconfig file found
-[97898][environment] Project root = /Users/eddie/Documents/PriceWatcherApp
-[97898][environment] INFER_ARGS =   @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.d0a143
-[97898][environment]   ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.d0a143':
-[97898][environment]     @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.c01ee7 capture
-[97898][environment]     --continue
-[97898][environment]     ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.c01ee7':
-[97898][environment]       run
-[97898][environment]     
-[97898][environment]   
-[97898][environment] command line arguments:   /usr/local/Cellar/infer/0.15.0/lib/infer/infer/lib/python/inferlib/../../../bin/infer
-[97898][environment]                           capture --continue -- javac -source 1.8 -target 1.8
-[97898][environment]                           -d
-[97898][environment]                           /Users/eddie/Documents/PriceWatcherApp/build/classes/java/main
-[97898][environment]                           -g -sourcepath  -proc:none -XDuseUnsharedTable=true
-[97898][environment]                           -classpath
-[97898][environment]                           /Users/eddie/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-math3/3.6.1/e4ba98f1d4b3c80ec46392f25e094a6a2e58fcbf/commons-math3-3.6.1.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/23.0/c947004bb13d18182be60077ade044099e4f26f1/guava-23.0.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/c0df91c5b9c98ebd28eec6764cb3416c195aec20/rxjava-2.2.6.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.0.18/5f65affce1684999e2f4024983835efc3504012e/error_prone_annotations-2.0.18.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/976d8d30bebc251db406f2bdb3eb01962b5685b3/j2objc-annotations-1.1.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.14/775b7e22fb10026eed3f86e8dc556dfafe35f2d5/animal-sniffer-annotations-1.14.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.2/323964c36556eb0e6209f65c1cef72b53b461ab8/reactive-streams-1.0.2.jar:/Users/eddie/Documents/PriceWatcherApp/build/classes/java/main
-[97898][environment]                           @/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_C7jKPk.txt
-[97898][environment]   ++Contents of '/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_C7jKPk.txt':
-[97898][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/PriceWatcherJFrame.java
-[97898][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ItemRenderer.java
-[97898][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ItemPanel.java
-[97898][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherConsole/Main.java
-[97898][environment]   
-[97898][environment] Analyzer: capture
-[97898][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
-[97898][      debug] Current working directory: '/Users/eddie/Documents/PriceWatcherApp'
-[97898][      debug] Trying to execute: javac '-J-Duser.language=en' '@/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_C7jKPk.txt' '@/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args_.tmp.2834d9' 2>'/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/javac.tmp.1b2965.out'
-[97898][      debug] *** Success. Logs:
-[97898][      debug] Translating 4 source files (4 classes)
-[97898][      debug] done capturing all files
-[97898][environment] Infer log identifier is 
-[97864][   progress] Found 4 source files to analyze in /Users/eddie/Documents/PriceWatcherApp/infer-out
-[97864][   progress] Starting analysis...
-[97864][   progress] 
-[97864][   progress] legend:
-[97864][   progress]   "F" analyzing a file
-[97864][   progress]   "." analyzing a procedure
-[97864][   progress] 
-[97864][   progress] 
-[97864][environment] Parallel jobs: 8
-[97864][   progress] FFF
+[1548][environment] CWD = /Users/eddie/Documents/PriceWatcherApp
+[1548][environment] No .inferconfig file found
+[1548][environment] Project root = /Users/eddie/Documents/PriceWatcherApp
+[1548][environment] INFER_ARGS =   @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.494655
+[1548][environment]   ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.494655':
+[1548][environment]     @/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.465cb1 capture
+[1548][environment]     --continue
+[1548][environment]     ++Contents of '/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args.tmp.465cb1':
+[1548][environment]       run
+[1548][environment]     
+[1548][environment]   
+[1548][environment] command line arguments:   /usr/local/Cellar/infer/0.15.0/lib/infer/infer/lib/python/inferlib/../../../bin/infer
+[1548][environment]                           capture --continue -- javac -source 1.8 -target 1.8
+[1548][environment]                           -d
+[1548][environment]                           /Users/eddie/Documents/PriceWatcherApp/build/classes/java/main
+[1548][environment]                           -g -sourcepath  -proc:none -XDuseUnsharedTable=true
+[1548][environment]                           -classpath
+[1548][environment]                           /Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/23.0/c947004bb13d18182be60077ade044099e4f26f1/guava-23.0.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.2.6/c0df91c5b9c98ebd28eec6764cb3416c195aec20/rxjava-2.2.6.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.0.18/5f65affce1684999e2f4024983835efc3504012e/error_prone_annotations-2.0.18.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/976d8d30bebc251db406f2bdb3eb01962b5685b3/j2objc-annotations-1.1.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.14/775b7e22fb10026eed3f86e8dc556dfafe35f2d5/animal-sniffer-annotations-1.14.jar:/Users/eddie/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.2/323964c36556eb0e6209f65c1cef72b53b461ab8/reactive-streams-1.0.2.jar
+[1548][environment]                           @/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_CkYCNr.txt
+[1548][environment]   ++Contents of '/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_CkYCNr.txt':
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/ConsoleInterface.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/PriceWatcherJFrame.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ItemComponent.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ItemRenderer.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ItemPanel.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/Utils.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/GUI/ControlPanel.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/UserInterface/UI.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/Main.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/Item.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/PriceFinder.java
+[1548][environment]     /Users/eddie/Documents/PriceWatcherApp/src/main/java/priceWatcherModel/ItemManager.java
+[1548][environment]   
+[1548][environment] Analyzer: capture
+[1548][environment] Active checkers: annotation reachability (Java), biabduction (C/C++/ObjC, Java), fragment retains view (Java), immutable cast (Java), liveness (C/C++/ObjC), printf args (Java), ownership (C/C++/ObjC), RacerD (C/C++/ObjC, Java), SIOF (C/C++/ObjC), uninitialized variables (C/C++/ObjC)
+[1548][      debug] Current working directory: '/Users/eddie/Documents/PriceWatcherApp'
+[1548][      debug] Trying to execute: javac '-J-Duser.language=en' '@/Users/eddie/Documents/PriceWatcherApp/infer-out/filelists/gradle_CkYCNr.txt' '@/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/args_.tmp.bca6b1' 2>'/var/folders/5f/qhy2pkx93d71sb602b5m21zr0000gn/T/javac.tmp.218740.out'
+[1548][      debug] *** Success. Logs:
+[1548][      debug] Translating 12 source files (15 classes)
+[1548][      debug] done capturing all files
+[1548][environment] Infer log identifier is 
+[1508][   progress] Found 12 source files to analyze in /Users/eddie/Documents/PriceWatcherApp/infer-out
+[1508][   progress] Starting analysis...
+[1508][   progress] 
+[1508][   progress] legend:
+[1508][   progress]   "F" analyzing a file
+[1508][   progress]   "." analyzing a procedure
+[1508][   progress] 
+[1508][   progress] 
+[1508][environment] Parallel jobs: 8
+[1508][   progress] FFF
+F
+F
 F
 
+FF
 
-[97906][   progress] .[97907][   progress] ..[97909][   progress] ...[97908][   progress] ......................
+
+[1560][   progress] .[1563][   progress] ....F
+[1562][   progress] .[1559][   progress] ..[1557][   progress] ...[1561][   progress] .F.
+[1564][   progress] ...[1558][   progress] ..............F
+.......F
+[1565][   progress] ...[1566][   progress] ...................[1568][   progress] .......[1569][   progress] ...............
