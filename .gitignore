@@ -1,3 +1,4 @@
 **/infer/
 *.class
 ./Makefile
+./infer/
