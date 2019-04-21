@@ -17,7 +17,7 @@ import priceWatcherModel.Item;
 class ItemComponent extends JComponent {
 
     private static final long serialVersionUID = 1L;
-    private final static String IMAGE_DIR = "/main/java/res/";
+    //private final static String IMAGE_DIR = "/main/java/res/";
     private DecimalFormat formater;
     private DecimalFormat percentFormat;
     private Item item;
@@ -36,19 +36,20 @@ class ItemComponent extends JComponent {
         this.item = item;
     }
 
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+    public void paint(Graphics g) {
+        super.paint(g);
+        // paintComponent(g);
         int x = 20, y = 30;
         item.update();
-        g.drawString("Name:\t" + item.getName(), x, y);
+        g.drawString(" Name:\t\t\t\t" + item.getName(), x, y);
         y += 20;
 
-        g.drawString("\nURL:\t" + item.getUrl(), x, y);
+        g.drawString("\nURL:\t\t\t\t" + item.getUrl(), x, y);
         y += 20;
-        g.drawString("\nPrice:\t$ " + formater.format(item.getCurrentPrice()), x, y);
+        g.drawString("\nPrice:\t\t\t\t$ " + formater.format(item.getCurrentPrice()), x, y);
         y += 20;
 
-        g.drawString("\nChange:\t%", x, y);
+        g.drawString("\nChange:\t\t\t\t%", x, y);
         if (item.isNegative())
             g.setColor(Color.RED);
         else
@@ -57,13 +58,8 @@ class ItemComponent extends JComponent {
         g.setColor(Color.BLACK);
         g.drawString(" (starting Price: $" + formater.format(item.getStartPrice()) + ")", x + 100, y);
         y += 20;
-        g.drawString("\nDate:\t" + item.getDate(), x, y);
+        g.drawString("\nDate:\t\t\t\t" + item.getDate(), x, y);
         y += 20;
-    }
-
-    public void paint(Graphics g) {
-        super.paint(g);
-        paintComponent(g);
         paintChildren(g);
     }
 }
