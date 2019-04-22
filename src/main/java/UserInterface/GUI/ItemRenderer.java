@@ -16,16 +16,25 @@ import priceWatcherModel.Item;
 class ItemRenderer extends ItemComponent implements ListCellRenderer<Item> {
 
     private static final long serialVersionUID = 6976866887638917348L;
+    private SelectionListener selectionListener;
 
     @Override
     public Component getListCellRendererComponent(
         JList<? extends Item> list, Item item, int index, boolean isSelected,
             boolean cellHasFocus) {
         setItem(item);
-        if (isSelected)setBackground(new Color(0xFFFFCC));
+        if (isSelected){
+            if(selectionListener != null)selectionListener.selectionMade(this);
+            setBackground(new Color(0xFFFFCC));item.update();
+
+        }
         else setBackground(list.getBackground());
         
         return this;
+    }
+
+    public void addListener(SelectionListener selectionListener){
+        this.selectionListener = selectionListener;
     }
 
 }

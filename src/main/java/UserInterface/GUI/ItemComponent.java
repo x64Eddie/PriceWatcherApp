@@ -3,7 +3,6 @@ package UserInterface.GUI;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +19,7 @@ import priceWatcherModel.Item;
  * Represents the View representation of the item, this is going to be the UI of
  * the Item
  */
-class ItemComponent extends JPanel {
+public class ItemComponent extends JPanel {
 
     private static final long serialVersionUID = 1L;
     private final static String IMAGE_DIR = ".//src//res//web.png";
@@ -43,6 +42,10 @@ class ItemComponent extends JPanel {
         this.item = item;
     }
 
+    public Item getItem(){
+        return this.item;
+    }
+
     public void paint(Graphics g) {
         super.paint(g);
         // paintComponent(g);
@@ -57,7 +60,7 @@ class ItemComponent extends JPanel {
               ex.printStackTrace();
          }
         x = 20; y = 30;
-        item.update();
+        //item.update();
         g.drawString(" Name:\t\t\t\t" + item.getName(), x, y);
         y += 20;
 
@@ -66,7 +69,7 @@ class ItemComponent extends JPanel {
         g.drawString("\nPrice:\t\t\t\t$ " + formater.format(item.getCurrentPrice()), x, y);
         y += 20;
 
-        g.drawString("\nChange:\t\t\t\t%", x, y);
+        g.drawString("\nChange:\t%\t\t", x, y);
         if (item.isNegative())
             g.setColor(Color.RED);
         else

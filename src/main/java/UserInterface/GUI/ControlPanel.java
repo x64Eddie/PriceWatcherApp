@@ -1,9 +1,9 @@
 package UserInterface.GUI;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.JButton;
@@ -16,55 +16,52 @@ import javax.swing.JPanel;
  */
 class ControlPanel extends JPanel {
     private static final long serialVersionUID = 1L;
-    private Map<AvailableButtons,JButton> buttons;
+    private Map<String, JButton> buttons;
     private ControlPanelListener controlPanelListener;
-    private ActionListener actionListener =(e) ->{
-        if(e.getSource() instanceof JButton){
-        AvailableButtons button = AvailableButtons.valueOf(((JButton)e.getSource()).getName());
-        controlPanelListener.buttonPressed(button, buttons.get(button));
-        }
-    };
-    private MouseListener mouseListener = new MouseListener(){
-    
-        @Override
-        public void mouseReleased(MouseEvent e) {
-            
-        }
-    
-        @Override
-        public void mousePressed(MouseEvent e) {
-            
-        }
-    
-        @Override
-        public void mouseExited(MouseEvent e) {
-            
-        }
-    
-        @Override
-        public void mouseEntered(MouseEvent e) {
-            AvailableButtons button = AvailableButtons.valueOf(((JButton)e.getSource()).getName());
-            //increase the size of the button when the users hover ontop of the button.
-            increaseSize(buttons.get(button));
-        }
-    
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            
-        }
-    };
+    private ActionListener actionListener = (e) -> controlPanelListener.buttonPressed(((JButton)e.getSource()).getText(), (JButton)e.getSource());
+  
+    // private MouseListener mouseListener = new MouseListener() {
 
-    public ControlPanel(ControlPanelListener eventListener) {
+    //     @Override
+    //     public void mouseReleased(MouseEvent e) {
+
+    //     }
+
+    //     @Override
+    //     public void mousePressed(MouseEvent e) {
+
+    //     }
+
+    //     @Override
+    //     public void mouseExited(MouseEvent e) {
+
+    //     }
+
+    //     @Override
+    //     public void mouseEntered(MouseEvent e) {
+    //         AvailableButtons button = AvailableButtons.valueOf(((JButton) e.getSource()).getName());
+    //         // increase the size of the button when the users hover ontop of the button.
+    //         increaseSize(buttons.get(button));
+    //     }
+
+    //     @Override
+    //     public void mouseClicked(MouseEvent e) {
+
+    //     }
+    // };
+
+    public ControlPanel(ControlPanelListener eventListener, List<String> items) {
         buttons = new HashMap<>();
-        //We are going to create all the available buttons!
-        for (AvailableButtons button : AvailableButtons.values()) {
-            JButton temp = new JButton(button.text);
-            temp.addActionListener(actionListener);
-            temp.addMouseListener(mouseListener);
-            buttons.put(button, temp);
-        }
-        this.controlPanelListener = eventListener;
 
+        setLayout(new GridLayout(2, 5));
+        // We are going to create all the available buttons!
+        this.controlPanelListener = eventListener;
+        for(String btnName: items){
+            JButton btn = new JButton(btnName);
+            btn.addActionListener(actionListener);
+            buttons.put(btnName, btn);
+            add(btn);
+        }
     }
 
     /**
@@ -76,30 +73,7 @@ class ControlPanel extends JPanel {
     }
 }
 
-/**
- * The button event that could be trigger from the user pressing one
- */
-enum AvailableButtons {
-UPDATE_ALL("UpdateAll"), ADDITEM("AddItem"), LAST_ITEM("LastItem"), SEARCH("Search"),
- FIRST_ITEM("FirstItem"), UPDATE_ITEM("UpdateItem"),
-WEB_VIEW("WebView"), EDIT("Edit"), REMOVE("Remove"), INFO("Info");
-    final String text;
-    AvailableButtons(final String text){
-        this.text = text;
-    }
-    @Override
-    public String toString(){
-        return text;
-    }
-    /**
-     * @return the text
-     */
-    public String getText() {
-        return text;
-    }
-}
-
 @FunctionalInterface
-interface ControlPanelListener{
-    void buttonPressed(AvailableButtons buttonPressed, JButton sourceBtn);
+interface ControlPanelListener {
+    void buttonPressed(String buttonPressed, JButton sourceBtn);
 }
