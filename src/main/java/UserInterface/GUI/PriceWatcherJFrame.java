@@ -9,6 +9,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
@@ -29,7 +30,6 @@ import javax.swing.SwingUtilities;
 import UserInterface.UI;
 import priceWatcherModel.Item;
 import priceWatcherModel.ItemModel;
-import UserInterface.Utils.*;
 
 public class PriceWatcherJFrame extends JFrame implements UI {
 
@@ -66,6 +66,14 @@ public class PriceWatcherJFrame extends JFrame implements UI {
         showMessage("Welcome!");
 
         itemModel = new ItemModel();
+        try {
+            itemModel.addItems(new Item("Sony Tv", new URL(
+                    "https://www.bestbuy.com/site/samsung-65-class-led-nu8000-series-2160p-smart-4k-uhd-tv-with-hdr/6199828.p?skuId=6199828"),
+                    300, 200));
+        } catch (MalformedURLException e) {
+
+            e.printStackTrace();
+        }
         itemPanel = new ItemPanel();
         controller = new ItemController(itemModel, itemPanel);
     }
@@ -83,20 +91,6 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     private void createItemButtonClicked(ActionEvent event) {
 
     }
-
-    /**
-     * Callback to be invoked when the view-page icon is clicked. Launch a (default)
-     * web browser by supplying the URL of the item.
-     */
-    // private void viewPageClicked() {
-    // try {
-    // java.awt.Desktop.getDesktop()
-    // .browse(java.net.URI.create(itemView.getItem().getUrl().toString()));
-    // } catch (IOException e) {
-    // e.printStackTrace();
-    // }
-    // showMessage("View clicked!");
-    // }
 
     /** Show briefly the given string in the message bar. */
     private void showMessage(String msg) {
@@ -118,14 +112,6 @@ public class PriceWatcherJFrame extends JFrame implements UI {
         JPanel control = createControlPanel();
         control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
         add(control, BorderLayout.NORTH);
-
-        try {
-            itemModel.addItems(new Item("Sony Tv", new URL(
-                    "https://www.bestbuy.com/site/samsung-65-class-led-nu8000-series-2160p-smart-4k-uhd-tv-with-hdr/6199828.p?skuId=6199828"),
-                    300, 200));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
 
         itemPanel.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
         add(itemPanel);
@@ -160,35 +146,34 @@ public class PriceWatcherJFrame extends JFrame implements UI {
 
                     break;
                 case "AddItem":
-                    JDialog addDialog = new JDialog();
-                    addDialog.setResizable(false);
-                    addDialog.setSize(new Dimension(200, 200));
-                    addDialog.setTitle("Add Item");
+                    JDialog addItemDialog = new JDialog();
+                    addItemDialog.setResizable(false);
+                    addItemDialog.setSize(new Dimension(200, 200));
+                    addItemDialog.setTitle("Add Item");
                     GridLayout layout = new GridLayout(4, 2);
-                    addDialog.setLayout(layout);
+                    addItemDialog.setLayout(layout);
 
                     String labels[] = { "Name: ", "URL: ", "Price: " };
-                    JTextField textFields[] = {new JTextField(10),new JTextField(10),new JTextField(10)};
+                    JTextField textFields[] = { new JTextField(10), new JTextField(10), new JTextField(10) };
                     for (int i = 0; i < labels.length; i++) {
                         JLabel label = new JLabel(labels[i]);
-                        addDialog.add(label);
-                        addDialog.add(textFields[i]);
+                        addItemDialog.add(label);
+                        addItemDialog.add(textFields[i]);
                     }
                     JButton accept = new JButton("Accept"), cancel = new JButton("Cancel");
-                    addDialog.add(cancel);
-                    addDialog.add(accept);
-                    cancel.addActionListener((e)->addDialog.dispose());
-                    accept.addActionListener((e)->{
+                    addItemDialog.add(cancel);
+                    addItemDialog.add(accept);
+                    cancel.addActionListener((e) -> addItemDialog.dispose());
+                    accept.addActionListener((e) -> {
                         try {
                             Item item = new Item(textFields[0].getText(), new URL(textFields[1].getText()));
                             controller.addItem(item);
-                            addDialog.dispose();
+                            addItemDialog.dispose();
                         } catch (MalformedURLException e1) {
                             e1.printStackTrace();
                         }
                     });
-                    addDialog.setVisible(true);
-                    ;
+                    addItemDialog.setVisible(true);
                     break;
                 case "LastItem":
                     itemView.repaint();
@@ -197,8 +182,50 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 case "Search":
                 case "FirstItem":
                 case "UpdateItem":
+                    itemPanel.getCurrentItem().update();
+                    break;
                 case "WebView":
+                    try {
+                        java.awt.Desktop.getDesktop()
+                                .browse(java.net.URI.create(itemPanel.getCurrentItem().getUrl().toString()));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
                 case "Edit":
+                    Item citem = itemPanel.getCurrentItem();
+                    JDialog editDialog = new JDialog();
+                    editDialog.setResizable(false);
+                    editDialog.setSize(new Dimension(200, 200));
+                    editDialog.setTitle("Add Item");
+                    GridLayout elayout = new GridLayout(4, 2);
+                    editDialog.setLayout(elayout);
+
+                    String eLabels[] = { "Name: ", "URL: ", "Price: " };
+                    JTextField etextFields[] = { new JTextField(citem.getName(),10),
+                         new JTextField(citem.getUrl().toString(),10),
+                         new JTextField(String.valueOf(citem.getCurrentPrice()),10) };
+                    for (int i = 0; i < eLabels.length; i++) {
+                        JLabel label = new JLabel(eLabels[i]);
+                        editDialog.add(label);
+                        editDialog.add(etextFields[i]);
+                    }
+                    JButton eaccept = new JButton("Accept"), ecancel = new JButton("Cancel");
+                    editDialog.add(ecancel);
+                    editDialog.add(eaccept);
+                    ecancel.addActionListener((e) -> editDialog.dispose());
+                    eaccept.addActionListener((e) -> {
+                        itemPanel.removeSelecItem();
+                        try {
+                            Item item = new Item(etextFields[0].getText(), new URL(etextFields[1].getText()));
+                            controller.addItem(item);
+                            editDialog.dispose();
+                        } catch (MalformedURLException e1) {
+                            e1.printStackTrace();
+                        }
+                    });
+                    editDialog.setVisible(true);
+                    break;
                 case "Remove":
                     itemPanel.removeSelecItem();
                     break;

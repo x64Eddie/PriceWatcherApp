@@ -56,6 +56,10 @@ public class ItemPanel extends JPanel implements SelectionListener {
         listModel.add(0, item);
     }
 
+    public Item getCurrentItem(){
+        return jList.getSelectedValue();
+    }
+
     @Override
     public void selectionMade(ItemComponent itemComponent) {
         selectedComponent = itemComponent;
