@@ -64,7 +64,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
      */
     private void refreshButtonClicked(ActionEvent event) {
         itemView.repaint();
-        showMessage("Refresh clicked!");
+        showMessage(" Refreshed! ");
     }
 
     /**
@@ -84,7 +84,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     /** Create a control panel consisting of a refresh button. */
     private JPanel makeControlPanel() {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEADING));
-        JButton refreshButton = new JButton("Refresh");
+        JButton refreshButton = new JButton(" Refresh ");
         refreshButton.setFocusPainted(false);
         refreshButton.addActionListener(this::refreshButtonClicked);
         panel.add(refreshButton);
