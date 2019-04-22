@@ -8,6 +8,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -118,27 +119,21 @@ public class PriceWatcherJFrame extends JFrame implements UI {
         JPanel control = new ControlPanel(new ControlPanelListener() {
 
             @Override
-            public void buttonPressed(AvailableButtons buttonPressed, JButton sourceBtn) {
+            public void buttonPressed(String buttonPressed, JButton sourceBtn) {
                 switch (buttonPressed) {
-                case ADDITEM:
-                    JDialog addDialog = new JDialog();
-                    addDialog.setTitle("Add Item");
-                case UPDATE_ALL:
-                    sourceBtn.setText("Pressed");
-                    sourceBtn.repaint();
-                case LAST_ITEM:
-                case SEARCH:
-                case FIRST_ITEM:
-                case UPDATE_ITEM:
-                    itemView.repaint();
-                    showMessage("Refresh clicked!");
-                case WEB_VIEW:
-                case EDIT:
-                case REMOVE:
-                case INFO:
+                case "UpdateAll":
+                case "AddItem":
+                case "LastItem":
+                case "Search":
+                case "FirstItem":
+                case "UpdateItem":
+                case "WebView":
+                case "Edit":
+                case "Remove":
+                case "Info":
                 }
             }
-        });
+        }, Arrays.asList("UpdateAll","AddItem","LastItem","Search","FirstItem","UpdateItem","WebView","Edit","Remove","Info" ));
         control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
         add(control, BorderLayout.NORTH);
         ItemPanel itemPanel = new ItemPanel();
