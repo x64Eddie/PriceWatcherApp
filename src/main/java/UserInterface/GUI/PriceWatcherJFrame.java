@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Arrays;
 
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
@@ -127,8 +128,9 @@ public class PriceWatcherJFrame extends JFrame implements UI {
         JPanel control = new ControlPanel(new ControlPanelListener() {
 
             @Override
-            public void buttonPressed(AvailableButtons buttonPressed, JButton sourceBtn) {
+            public void buttonPressed(String buttonPressed, JButton sourceBtn) {
                 switch (buttonPressed) {
+<<<<<<< HEAD
                 case ADDITEM:
                     JDialog addDialog = new JDialog();
                     addDialog.setTitle("Add Item");
@@ -218,9 +220,97 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 case EDIT:
                 case REMOVE:
                 case INFO:
+=======
+                case "UpdateAll":
+                    JDialog addDialog = new JDialog();
+                    addDialog.setTitle("Add Item");
+                    addDialog.setLayout(new GridBagLayout());
+                    GridBagConstraints gbc = new GridBagConstraints();
+
+                    JLabel nameLabel = new JLabel("Name: ");
+                    JLabel urlLabel = new JLabel("URL: ");
+                    JLabel priceLabel = new JLabel("Price; ");
+
+                    JTextField nameText = new JTextField(25);
+                    JTextField urlText = new JTextField(25);
+                    JTextField priceText = new JTextField(25);
+
+                    JButton createBtn = new JButton("Create");
+                    JButton cancelBtn = new JButton("Cancel");
+
+                    gbc.fill = GridBagConstraints.HORIZONTAL;
+                    gbc.gridx = 0;
+                    gbc.gridy = 0;
+                    addDialog.add(nameLabel);
+
+                    gbc.gridx = 1;
+                    gbc.gridy = 0;
+                    addDialog.add(nameText);
+
+                    gbc.fill = GridBagConstraints.HORIZONTAL;
+                    gbc.gridx = 0;
+                    gbc.gridy = 1;
+                    addDialog.add(urlLabel);
+
+                    gbc.gridx = 1;
+                    gbc.gridy = 1;
+                    addDialog.add(urlText);
+
+                    gbc.fill = GridBagConstraints.HORIZONTAL;
+                    gbc.gridx = 0;
+                    gbc.gridy = 2;
+                    addDialog.add(priceLabel);
+
+                    gbc.gridx = 1;
+                    gbc.gridy = 2;
+                    addDialog.add(priceText);
+
+                    gbc.fill = GridBagConstraints.HORIZONTAL;
+                    gbc.gridx = 0;
+                    gbc.gridy = 3;
+                    gbc.gridwidth = 2;
+                    addDialog.add(createBtn);
+
+                    gbc.gridx = 0;
+                    gbc.gridy = 4;
+                    gbc.gridwidth = 2;
+                    addDialog.add(cancelBtn);
+
+                    createBtn.addActionListener(new ActionListener(){
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            String itemName = nameText.getText();
+                            String itemUrlString = urlText.getText();
+                            double itemPrice = Double.parseDouble(priceText.getText());
+
+                            try{
+                                URL itemUrl = new URL(itemUrlString);
+                                Item itemToAdd = new Item(itemName, itemUrl);
+                                
+                            }
+                            catch(MalformedURLException exception){
+                                exception.printStackTrace();
+                            }
+                        }
+                    });
+                    break;
+                case "AddItem":
+                    sourceBtn.setText("Pressed");
+                    sourceBtn.repaint();
+                case "LastItem":
+                    itemView.repaint();
+                    showMessage("Refresh clicked!");
+                case "Search":
+                case "FirstItem":
+                case "UpdateItem":
+                case "WebView":
+                case "Edit":
+                case "Remove":
+                case "Info":
+>>>>>>> fecc387176bd0f05749ba3e83500fea62cd3f93a
                 }
             }
-        });
+        }, Arrays.asList("UpdateAll","AddItem","LastItem","Search","FirstItem","UpdateItem","WebView","Edit","Remove","Info" ));
         control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
         add(control, BorderLayout.NORTH);
         ItemPanel itemPanel = new ItemPanel();
