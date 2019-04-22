@@ -1,5 +1,7 @@
 package UserInterface.GUI;
 
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -22,6 +24,9 @@ class ControlPanel extends JPanel {
         if (e.getSource() instanceof JButton) {
             AvailableButtons button = AvailableButtons.valueOf(((JButton) e.getSource()).getName());
             controlPanelListener.buttonPressed(button, buttons.get(button));
+        }
+        else{
+            System.out.print("obj");
         }
     };
     private MouseListener mouseListener = new MouseListener() {
@@ -56,14 +61,18 @@ class ControlPanel extends JPanel {
 
     public ControlPanel(ControlPanelListener eventListener) {
         buttons = new HashMap<>();
+
+        setLayout(new GridLayout(2, 5));
         // We are going to create all the available buttons!
+        this.controlPanelListener = eventListener;
         for (AvailableButtons button : AvailableButtons.values()) {
             JButton temp = new JButton(button.text);
             temp.addActionListener(actionListener);
             temp.addMouseListener(mouseListener);
             buttons.put(button, temp);
+            add(temp);
         }
-        this.controlPanelListener = eventListener;
+        
 
     }
 

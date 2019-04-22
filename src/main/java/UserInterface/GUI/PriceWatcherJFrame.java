@@ -12,6 +12,7 @@ import java.net.URL;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -120,11 +121,17 @@ public class PriceWatcherJFrame extends JFrame implements UI {
             public void buttonPressed(AvailableButtons buttonPressed, JButton sourceBtn) {
                 switch (buttonPressed) {
                 case ADDITEM:
+                    JDialog addDialog = new JDialog();
+                    addDialog.setTitle("Add Item");
                 case UPDATE_ALL:
+                    sourceBtn.setText("Pressed");
+                    sourceBtn.repaint();
                 case LAST_ITEM:
                 case SEARCH:
                 case FIRST_ITEM:
                 case UPDATE_ITEM:
+                    itemView.repaint();
+                    showMessage("Refresh clicked!");
                 case WEB_VIEW:
                 case EDIT:
                 case REMOVE:
