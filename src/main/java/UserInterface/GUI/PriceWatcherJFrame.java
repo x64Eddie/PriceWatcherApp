@@ -4,8 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
@@ -19,11 +22,14 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
 import javax.swing.SwingUtilities;
 
 import UserInterface.UI;
 import priceWatcherModel.Item;
 import priceWatcherModel.ItemManager;
+import UserInterface.Utils.*;
 
 public class PriceWatcherJFrame extends JFrame implements UI {
 
@@ -67,6 +73,10 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     private void refreshButtonClicked(ActionEvent event) {
         itemView.repaint();
         showMessage("Refresh clicked!");
+    }
+
+    private void createItemButtonClicked(ActionEvent event) {
+
     }
 
     /**
@@ -120,9 +130,37 @@ public class PriceWatcherJFrame extends JFrame implements UI {
             @Override
             public void buttonPressed(String buttonPressed, JButton sourceBtn) {
                 switch (buttonPressed) {
+
                 case "UpdateAll":
+
+                    break;
                 case "AddItem":
+                    JDialog addDialog = new JDialog();
+                    addDialog.setResizable(false);
+                    addDialog.setSize(new Dimension(200, 200));
+                    addDialog.setTitle("Add Item");
+                    GridLayout layout = new GridLayout(4, 2);
+                    addDialog.setLayout(layout);
+
+                    String labels[] = { "Name: ", "URL: ", "Price: " };
+                    int y = 0;
+                    for (int i = 0; i < labels.length; i++) {
+                        JLabel label = new JLabel(labels[i]);
+                        addDialog.add(label);
+                        JTextField textField = new JTextField(10);
+                        addDialog.add(textField);
+                        // layout.putConstraint(SpringLayout.WEST, textField,50,SpringLayout.EAST,
+                        // label);
+                    }
+                    JButton accept = new JButton("Accept"), cancel = new JButton("Cancel");
+                    addDialog.add(cancel);
+                    addDialog.add(accept);
+                    addDialog.show();
+                    break;
                 case "LastItem":
+                    itemView.repaint();
+                    showMessage("Refresh clicked!");
+                    break;
                 case "Search":
                 case "FirstItem":
                 case "UpdateItem":
@@ -130,9 +168,11 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 case "Edit":
                 case "Remove":
                 case "Info":
+
                 }
             }
-        }, Arrays.asList("UpdateAll","AddItem","LastItem","Search","FirstItem","UpdateItem","WebView","Edit","Remove","Info" ));
+        }, Arrays.asList("UpdateAll", "AddItem", "LastItem", "Search", "FirstItem", "UpdateItem", "WebView", "Edit",
+                "Remove", "Info"));
         control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
         add(control, BorderLayout.NORTH);
         ItemPanel itemPanel = new ItemPanel();

@@ -20,7 +20,7 @@ import priceWatcherModel.Item;
  * Represents the View representation of the item, this is going to be the UI of
  * the Item
  */
-class ItemComponent extends JPanel {
+public class ItemComponent extends JPanel {
 
     private static final long serialVersionUID = 1L;
     private final static String IMAGE_DIR = ".//src//res//web.png";
