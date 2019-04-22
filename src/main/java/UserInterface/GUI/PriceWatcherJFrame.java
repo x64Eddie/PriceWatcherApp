@@ -117,7 +117,6 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     public void configureUI() {
         setLayout(new BorderLayout());
         JPanel control = new ControlPanel(new ControlPanelListener() {
-
             @Override
             public void buttonPressed(String buttonPressed, JButton sourceBtn) {
                 switch (buttonPressed) {
