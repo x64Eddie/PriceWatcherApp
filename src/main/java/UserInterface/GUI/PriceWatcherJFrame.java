@@ -1,36 +1,30 @@
 package UserInterface.GUI;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 
 import javax.swing.BorderFactory;
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
-import javax.swing.SpringLayout;
 import javax.swing.SwingUtilities;
 
 import UserInterface.UI;
 import priceWatcherModel.Item;
 import priceWatcherModel.ItemModel;
 
+/**
+ * JFrame that holds the PriceWatcher application
+ */
 public class PriceWatcherJFrame extends JFrame implements UI {
 
     private static final long serialVersionUID = 1L;
@@ -45,16 +39,19 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     private JLabel msgBar = new JLabel(" ");
 
     private ItemController itemController;
-    ItemModel itemModel;
-    ItemPanel itemPanel;
-    ItemController controller;
+    private ItemModel itemModel;
+    private ItemPanel itemPanel;
+    private ItemController controller;
 
     /** Create a new dialog. */
     public PriceWatcherJFrame() {
         this(DEFAULT_SIZE);
     }
 
-    /** Create a new dialog of the given screen dimension. */
+   /**
+    * Creates the JFrame for the PriceWatcher
+    * @param dim - the dimension of the JFrame
+    */
     public PriceWatcherJFrame(Dimension dim) {
         super("Price Watcher");
         setSize(dim);
@@ -78,19 +75,6 @@ public class PriceWatcherJFrame extends JFrame implements UI {
         controller = new ItemController(itemModel, itemPanel);
     }
 
-    /**
-     * Callback to be invoked when the refresh button is clicked. Find the current
-     * price of the watched item and display it along with a percentage price
-     * change.
-     */
-    private void refreshButtonClicked(ActionEvent event) {
-        itemView.repaint();
-        showMessage("Refresh clicked!");
-    }
-
-    private void createItemButtonClicked(ActionEvent event) {
-
-    }
 
     /** Show briefly the given string in the message bar. */
     private void showMessage(String msg) {
@@ -105,7 +89,6 @@ public class PriceWatcherJFrame extends JFrame implements UI {
             }
         }).start();
     }
-
     @Override
     public void configureUI() {
         setLayout(new BorderLayout());
@@ -182,7 +165,9 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 case "Search":
                 case "FirstItem":
                 case "UpdateItem":
-                    itemPanel.getCurrentItem().update();
+                    ItemComponent itemComp = itemPanel.getSelectedComp();
+                    itemComp.getItem().update();
+                    itemComp.repaint();
                     break;
                 case "WebView":
                     try {
@@ -230,6 +215,9 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                     itemPanel.removeSelecItem();
                     break;
                 case "Info":
+                    JOptionPane.showMessageDialog(null, "Price Watcher © 2019\nBy; Eddie Herrera, Ian Hudson, and Aaron Mendez",
+                    "PriceWatcherInfo",JOptionPane.INFORMATION_MESSAGE);
+                    break;
 
                 }
             }

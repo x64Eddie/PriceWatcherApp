@@ -2,6 +2,8 @@ package UserInterface.GUI;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,40 +22,38 @@ class ControlPanel extends JPanel {
     private ControlPanelListener controlPanelListener;
     private ActionListener actionListener = (e) -> controlPanelListener.buttonPressed(((JButton)e.getSource()).getText(), (JButton)e.getSource());
   
-    // private MouseListener mouseListener = new MouseListener() {
+    private MouseListener mouseListener = new MouseListener() {
 
-    //     @Override
-    //     public void mouseReleased(MouseEvent e) {
+        @Override
+        public void mouseReleased(MouseEvent e) {
 
-    //     }
+        }
 
-    //     @Override
-    //     public void mousePressed(MouseEvent e) {
+        @Override
+        public void mousePressed(MouseEvent e) {
 
-    //     }
+        }
 
-    //     @Override
-    //     public void mouseExited(MouseEvent e) {
+        @Override
+        public void mouseExited(MouseEvent e) {
 
-    //     }
+        }
 
-    //     @Override
-    //     public void mouseEntered(MouseEvent e) {
-    //         AvailableButtons button = AvailableButtons.valueOf(((JButton) e.getSource()).getName());
-    //         // increase the size of the button when the users hover ontop of the button.
-    //         increaseSize(buttons.get(button));
-    //     }
+        @Override
+        public void mouseEntered(MouseEvent e) {
 
-    //     @Override
-    //     public void mouseClicked(MouseEvent e) {
+        }
 
-    //     }
-    // };
+        @Override
+        public void mouseClicked(MouseEvent e) {
+
+        }
+    };
 
     public ControlPanel(ControlPanelListener eventListener, List<String> items) {
         buttons = new HashMap<>();
 
-        setLayout(new GridLayout(2, 5));
+        setLayout(new GridLayout(1, 5));
         // We are going to create all the available buttons!
         this.controlPanelListener = eventListener;
         for(String btnName: items){

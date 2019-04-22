@@ -47,6 +47,10 @@ public class ItemPanel extends JPanel implements SelectionListener {
         if(selected != -1)listModel.remove(selected);
     }
 
+    public ItemComponent getSelectedComp(){
+        return selectedComponent;
+    }
+
     /**
      * Adding the elemnt to the Jlist
      * 

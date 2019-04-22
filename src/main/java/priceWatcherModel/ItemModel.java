@@ -18,7 +18,7 @@ public ItemModel(){
 
 /**
  * Adds the items to the manager.
- * @param items
+ * @param items - the Items that are going to be added.
  */
 public void addItems(Item... items){
     this.items.addAll(Arrays.asList(items));
@@ -28,8 +28,8 @@ public void addItems(Item... items){
  * Gets the items that are from a specific store, for example, Ebay or BestBuy.
  * we are going to get the store by looking at the URL then extract from what store
  * the item belongs to.
- * @param store
- * @return List<Item> items - The items that are of the Store
+ * @param store - the store we are looking the items in.
+ * @return items - The items that are of the Store
  */
 public List<Item> getItems(String store){
     Pattern pattern = Pattern.compile("(https?://)([^:^/]*)(:\\d*)?(.*)?");
@@ -42,7 +42,8 @@ public List<Item> getItems(String store){
 }
 
 /**
- * Gets all the items
+ * get the Items in the model
+ * @return - the Items in the model.
  */
 public List<Item> getItems (){
     return this.items;
