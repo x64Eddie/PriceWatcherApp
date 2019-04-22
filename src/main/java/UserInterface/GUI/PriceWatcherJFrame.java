@@ -130,99 +130,10 @@ public class PriceWatcherJFrame extends JFrame implements UI {
             @Override
             public void buttonPressed(String buttonPressed, JButton sourceBtn) {
                 switch (buttonPressed) {
-<<<<<<< HEAD
-                case ADDITEM:
-                    JDialog addDialog = new JDialog();
-                    addDialog.setTitle("Add Item");
-                    addDialog.setLayout(new GridBagLayout());
-                    GridBagConstraints gbc = new GridBagConstraints();
 
-                    JLabel nameLabel = new JLabel("Name: ");
-                    JLabel urlLabel = new JLabel("URL: ");
-                    JLabel priceLabel = new JLabel("Price; ");
-
-                    JTextField nameText = new JTextField(25);
-                    JTextField urlText = new JTextField(25);
-                    JTextField priceText = new JTextField(25);
-
-                    JButton createBtn = new JButton("Create");
-                    JButton cancelBtn = new JButton("Cancel");
-
-                    gbc.fill = GridBagConstraints.HORIZONTAL;
-                    gbc.gridx = 0;
-                    gbc.gridy = 0;
-                    addDialog.add(nameLabel);
-
-                    gbc.gridx = 1;
-                    gbc.gridy = 0;
-                    addDialog.add(nameText);
-
-                    gbc.fill = GridBagConstraints.HORIZONTAL;
-                    gbc.gridx = 0;
-                    gbc.gridy = 1;
-                    addDialog.add(urlLabel);
-
-                    gbc.gridx = 1;
-                    gbc.gridy = 1;
-                    addDialog.add(urlText);
-
-                    gbc.fill = GridBagConstraints.HORIZONTAL;
-                    gbc.gridx = 0;
-                    gbc.gridy = 2;
-                    addDialog.add(priceLabel);
-
-                    gbc.gridx = 1;
-                    gbc.gridy = 2;
-                    addDialog.add(priceText);
-
-                    gbc.fill = GridBagConstraints.HORIZONTAL;
-                    gbc.gridx = 0;
-                    gbc.gridy = 3;
-                    gbc.gridwidth = 2;
-                    addDialog.add(createBtn);
-
-                    gbc.gridx = 0;
-                    gbc.gridy = 4;
-                    gbc.gridwidth = 2;
-                    addDialog.add(cancelBtn);
-
-                    createBtn.addActionListener(new ActionListener(){
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            String itemName = nameText.getText();
-                            String itemUrlString = urlText.getText();
-                            double itemPrice = Double.parseDouble(priceText.getText());
-
-                            try{
-                                URL itemUrl = new URL(itemUrlString);
-                                Item itemToAdd = new Item(itemName, itemUrl);
-                                
-                            }
-                            catch(MalformedURLException exception){
-                                exception.printStackTrace();
-                            }
-                        }
-                    });
-
-
-
-
-                case UPDATE_ALL:
-                    sourceBtn.setText("Pressed");
-                    sourceBtn.repaint();
-                case LAST_ITEM:
-                case SEARCH:
-                case FIRST_ITEM:
-                case UPDATE_ITEM:
-                    itemView.repaint();
-                    showMessage("Refresh clicked!");
-                case WEB_VIEW:
-                case EDIT:
-                case REMOVE:
-                case INFO:
-=======
                 case "UpdateAll":
                     JDialog addDialog = new JDialog();
+                    addDialog.setSize(new Dimension(100,400));
                     addDialog.setTitle("Add Item");
                     addDialog.setLayout(new GridBagLayout());
                     GridBagConstraints gbc = new GridBagConstraints();
@@ -293,13 +204,16 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                             }
                         }
                     });
+                    addDialog.show();
                     break;
                 case "AddItem":
                     sourceBtn.setText("Pressed");
                     sourceBtn.repaint();
+                    break;
                 case "LastItem":
                     itemView.repaint();
                     showMessage("Refresh clicked!");
+                    break;
                 case "Search":
                 case "FirstItem":
                 case "UpdateItem":
@@ -307,7 +221,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 case "Edit":
                 case "Remove":
                 case "Info":
->>>>>>> fecc387176bd0f05749ba3e83500fea62cd3f93a
+
                 }
             }
         }, Arrays.asList("UpdateAll","AddItem","LastItem","Search","FirstItem","UpdateItem","WebView","Edit","Remove","Info" ));
