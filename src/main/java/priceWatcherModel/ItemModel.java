@@ -9,10 +9,10 @@ import java.util.regex.Pattern;
 /**
  * Takes care of all the adding and removing of the items
  */
-public class ItemManager {
+public class ItemModel {
     private List<Item> items;
 
-public ItemManager(){
+public ItemModel(){
     this.items = new ArrayList<>();
 }
 

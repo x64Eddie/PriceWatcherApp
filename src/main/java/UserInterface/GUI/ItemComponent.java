@@ -43,6 +43,10 @@ public class ItemComponent extends JPanel {
         this.item = item;
     }
 
+    public Item getItem(){
+        return this.item;
+    }
+
     public void paint(Graphics g) {
         super.paint(g);
         // paintComponent(g);
@@ -57,7 +61,7 @@ public class ItemComponent extends JPanel {
               ex.printStackTrace();
          }
         x = 20; y = 30;
-        item.update();
+        //item.update();
         g.drawString(" Name:\t\t\t\t" + item.getName(), x, y);
         y += 20;
 
@@ -66,7 +70,7 @@ public class ItemComponent extends JPanel {
         g.drawString("\nPrice:\t\t\t\t$ " + formater.format(item.getCurrentPrice()), x, y);
         y += 20;
 
-        g.drawString("\nChange:\t\t\t\t%", x, y);
+        g.drawString("\nChange:\t%\t\t", x, y);
         if (item.isNegative())
             g.setColor(Color.RED);
         else

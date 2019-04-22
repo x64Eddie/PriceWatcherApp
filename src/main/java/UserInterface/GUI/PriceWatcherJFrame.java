@@ -28,7 +28,7 @@ import javax.swing.SwingUtilities;
 
 import UserInterface.UI;
 import priceWatcherModel.Item;
-import priceWatcherModel.ItemManager;
+import priceWatcherModel.ItemModel;
 import UserInterface.Utils.*;
 
 public class PriceWatcherJFrame extends JFrame implements UI {
@@ -44,9 +44,10 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     /** Message bar to display various messages. */
     private JLabel msgBar = new JLabel(" ");
 
-    // -----------------------------------------
-    private DefaultListModel<Item> listModel;
-    private JList<Item> jList;
+    private ItemController itemController;
+    ItemModel itemModel;
+    ItemPanel itemPanel;
+    ItemController controller;
 
     /** Create a new dialog. */
     public PriceWatcherJFrame() {
@@ -63,6 +64,10 @@ public class PriceWatcherJFrame extends JFrame implements UI {
         setVisible(true);
         setResizable(false);
         showMessage("Welcome!");
+
+        itemModel = new ItemModel();
+        itemPanel = new ItemPanel();
+        controller = new ItemController(itemModel, itemPanel);
     }
 
     /**
@@ -93,22 +98,6 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     // showMessage("View clicked!");
     // }
 
-    /** Create a control panel consisting of a refresh button. */
-    private JPanel makeControlPanel() {
-        JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEADING));
-        JButton refreshButton = new JButton("Refresh");
-        refreshButton.setFocusPainted(false);
-        refreshButton.addActionListener(this::refreshButtonClicked);
-        panel.add(refreshButton);
-
-        JButton add = new JButton("Add");
-        refreshButton.setFocusPainted(false);
-        refreshButton.addActionListener(this::refreshButtonClicked);
-        panel.add(refreshButton);
-
-        return panel;
-    }
-
     /** Show briefly the given string in the message bar. */
     private void showMessage(String msg) {
         msgBar.setText(msg);
@@ -126,7 +115,43 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     @Override
     public void configureUI() {
         setLayout(new BorderLayout());
-        JPanel control = new ControlPanel(new ControlPanelListener() {
+        JPanel control = createControlPanel();
+        control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
+        add(control, BorderLayout.NORTH);
+
+        try {
+            itemModel.addItems(new Item("Sony Tv", new URL(
+                    "https://www.bestbuy.com/site/samsung-65-class-led-nu8000-series-2160p-smart-4k-uhd-tv-with-hdr/6199828.p?skuId=6199828"),
+                    300, 200));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
+        itemPanel.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
+        add(itemPanel);
+
+        msgBar.setBorder(BorderFactory.createEmptyBorder(10, 16, 10, 0));
+        add(msgBar, BorderLayout.SOUTH);
+    }
+
+    @Override
+    public void draw() {
+
+    }
+
+    @Override
+    public void addItem(Item item) {
+
+    }
+
+    /**
+     * Creating the control panel that holds all the buttons to interact with the
+     * app.s
+     * 
+     * @return - the control panel
+     */
+    JPanel createControlPanel() {
+        return new ControlPanel(new ControlPanelListener() {
             @Override
             public void buttonPressed(String buttonPressed, JButton sourceBtn) {
                 switch (buttonPressed) {
@@ -143,19 +168,27 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                     addDialog.setLayout(layout);
 
                     String labels[] = { "Name: ", "URL: ", "Price: " };
-                    int y = 0;
+                    JTextField textFields[] = {new JTextField(10),new JTextField(10),new JTextField(10)};
                     for (int i = 0; i < labels.length; i++) {
                         JLabel label = new JLabel(labels[i]);
                         addDialog.add(label);
-                        JTextField textField = new JTextField(10);
-                        addDialog.add(textField);
-                        // layout.putConstraint(SpringLayout.WEST, textField,50,SpringLayout.EAST,
-                        // label);
+                        addDialog.add(textFields[i]);
                     }
                     JButton accept = new JButton("Accept"), cancel = new JButton("Cancel");
                     addDialog.add(cancel);
                     addDialog.add(accept);
-                    addDialog.show();
+                    cancel.addActionListener((e)->addDialog.dispose());
+                    accept.addActionListener((e)->{
+                        try {
+                            Item item = new Item(textFields[0].getText(), new URL(textFields[1].getText()));
+                            controller.addItem(item);
+                            addDialog.dispose();
+                        } catch (MalformedURLException e1) {
+                            e1.printStackTrace();
+                        }
+                    });
+                    addDialog.setVisible(true);
+                    ;
                     break;
                 case "LastItem":
                     itemView.repaint();
@@ -167,29 +200,14 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 case "WebView":
                 case "Edit":
                 case "Remove":
+                    itemPanel.removeSelecItem();
+                    break;
                 case "Info":
 
                 }
             }
         }, Arrays.asList("UpdateAll", "AddItem", "LastItem", "Search", "FirstItem", "UpdateItem", "WebView", "Edit",
                 "Remove", "Info"));
-        control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
-        add(control, BorderLayout.NORTH);
-        ItemPanel itemPanel = new ItemPanel();
-        itemPanel.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
-        add(itemPanel);
-        msgBar.setBorder(BorderFactory.createEmptyBorder(10, 16, 10, 0));
-        add(msgBar, BorderLayout.SOUTH);
-    }
-
-    @Override
-    public void draw() {
-
-    }
-
-    @Override
-    public void addItem(Item item) {
-
     }
 
 }
