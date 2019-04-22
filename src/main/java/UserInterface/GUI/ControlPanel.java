@@ -16,47 +16,47 @@ import javax.swing.JPanel;
  */
 class ControlPanel extends JPanel {
     private static final long serialVersionUID = 1L;
-    private Map<AvailableButtons,JButton> buttons;
+    private Map<AvailableButtons, JButton> buttons;
     private ControlPanelListener controlPanelListener;
-    private ActionListener actionListener =(e) ->{
-        if(e.getSource() instanceof JButton){
-        AvailableButtons button = AvailableButtons.valueOf(((JButton)e.getSource()).getName());
-        controlPanelListener.buttonPressed(button, buttons.get(button));
+    private ActionListener actionListener = (e) -> {
+        if (e.getSource() instanceof JButton) {
+            AvailableButtons button = AvailableButtons.valueOf(((JButton) e.getSource()).getName());
+            controlPanelListener.buttonPressed(button, buttons.get(button));
         }
     };
-    private MouseListener mouseListener = new MouseListener(){
-    
+    private MouseListener mouseListener = new MouseListener() {
+
         @Override
         public void mouseReleased(MouseEvent e) {
-            
+
         }
-    
+
         @Override
         public void mousePressed(MouseEvent e) {
-            
+
         }
-    
+
         @Override
         public void mouseExited(MouseEvent e) {
-            
+
         }
-    
+
         @Override
         public void mouseEntered(MouseEvent e) {
-            AvailableButtons button = AvailableButtons.valueOf(((JButton)e.getSource()).getName());
-            //increase the size of the button when the users hover ontop of the button.
+            AvailableButtons button = AvailableButtons.valueOf(((JButton) e.getSource()).getName());
+            // increase the size of the button when the users hover ontop of the button.
             increaseSize(buttons.get(button));
         }
-    
+
         @Override
         public void mouseClicked(MouseEvent e) {
-            
+
         }
     };
 
     public ControlPanel(ControlPanelListener eventListener) {
         buttons = new HashMap<>();
-        //We are going to create all the available buttons!
+        // We are going to create all the available buttons!
         for (AvailableButtons button : AvailableButtons.values()) {
             JButton temp = new JButton(button.text);
             temp.addActionListener(actionListener);
@@ -80,17 +80,19 @@ class ControlPanel extends JPanel {
  * The button event that could be trigger from the user pressing one
  */
 enum AvailableButtons {
-UPDATE_ALL("UpdateAll"), ADDITEM("AddItem"), LAST_ITEM("LastItem"), SEARCH("Search"),
- FIRST_ITEM("FirstItem"), UPDATE_ITEM("UpdateItem"),
-WEB_VIEW("WebView"), EDIT("Edit"), REMOVE("Remove"), INFO("Info");
+    UPDATE_ALL("UpdateAll"), ADDITEM("AddItem"), LAST_ITEM("LastItem"), SEARCH("Search"), FIRST_ITEM("FirstItem"),
+    UPDATE_ITEM("UpdateItem"), WEB_VIEW("WebView"), EDIT("Edit"), REMOVE("Remove"), INFO("Info");
     final String text;
-    AvailableButtons(final String text){
+
+    AvailableButtons(final String text) {
         this.text = text;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         return text;
     }
+
     /**
      * @return the text
      */
@@ -100,6 +102,6 @@ WEB_VIEW("WebView"), EDIT("Edit"), REMOVE("Remove"), INFO("Info");
 }
 
 @FunctionalInterface
-interface ControlPanelListener{
+interface ControlPanelListener {
     void buttonPressed(AvailableButtons buttonPressed, JButton sourceBtn);
 }

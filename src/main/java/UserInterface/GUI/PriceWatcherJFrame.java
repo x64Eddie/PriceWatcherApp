@@ -88,6 +88,12 @@ public class PriceWatcherJFrame extends JFrame implements UI {
         refreshButton.setFocusPainted(false);
         refreshButton.addActionListener(this::refreshButtonClicked);
         panel.add(refreshButton);
+
+        JButton add = new JButton("Add");
+        refreshButton.setFocusPainted(false);
+        refreshButton.addActionListener(this::refreshButtonClicked);
+        panel.add(refreshButton);
+
         return panel;
     }
 
@@ -108,7 +114,24 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     @Override
     public void configureUI() {
         setLayout(new BorderLayout());
-        JPanel control = makeControlPanel();
+        JPanel control = new ControlPanel(new ControlPanelListener() {
+
+            @Override
+            public void buttonPressed(AvailableButtons buttonPressed, JButton sourceBtn) {
+                switch (buttonPressed) {
+                case ADDITEM:
+                case UPDATE_ALL:
+                case LAST_ITEM:
+                case SEARCH:
+                case FIRST_ITEM:
+                case UPDATE_ITEM:
+                case WEB_VIEW:
+                case EDIT:
+                case REMOVE:
+                case INFO:
+                }
+            }
+        });
         control.setBorder(BorderFactory.createEmptyBorder(10, 16, 0, 16));
         add(control, BorderLayout.NORTH);
         ItemPanel itemPanel = new ItemPanel();
