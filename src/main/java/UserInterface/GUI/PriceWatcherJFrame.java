@@ -4,8 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -18,6 +21,8 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
 import javax.swing.SwingUtilities;
 
 import UserInterface.UI;
@@ -66,6 +71,10 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     private void refreshButtonClicked(ActionEvent event) {
         itemView.repaint();
         showMessage("Refresh clicked!");
+    }
+
+    private void createItemButtonClicked(ActionEvent event){
+
     }
 
     /**
@@ -123,6 +132,79 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 case ADDITEM:
                     JDialog addDialog = new JDialog();
                     addDialog.setTitle("Add Item");
+                    addDialog.setLayout(new GridBagLayout());
+                    GridBagConstraints gbc = new GridBagConstraints();
+
+                    JLabel nameLabel = new JLabel("Name: ");
+                    JLabel urlLabel = new JLabel("URL: ");
+                    JLabel priceLabel = new JLabel("Price; ");
+
+                    JTextField nameText = new JTextField(25);
+                    JTextField urlText = new JTextField(25);
+                    JTextField priceText = new JTextField(25);
+
+                    JButton createBtn = new JButton("Create");
+                    JButton cancelBtn = new JButton("Cancel");
+
+                    gbc.fill = GridBagConstraints.HORIZONTAL;
+                    gbc.gridx = 0;
+                    gbc.gridy = 0;
+                    addDialog.add(nameLabel);
+
+                    gbc.gridx = 1;
+                    gbc.gridy = 0;
+                    addDialog.add(nameText);
+
+                    gbc.fill = GridBagConstraints.HORIZONTAL;
+                    gbc.gridx = 0;
+                    gbc.gridy = 1;
+                    addDialog.add(urlLabel);
+
+                    gbc.gridx = 1;
+                    gbc.gridy = 1;
+                    addDialog.add(urlText);
+
+                    gbc.fill = GridBagConstraints.HORIZONTAL;
+                    gbc.gridx = 0;
+                    gbc.gridy = 2;
+                    addDialog.add(priceLabel);
+
+                    gbc.gridx = 1;
+                    gbc.gridy = 2;
+                    addDialog.add(priceText);
+
+                    gbc.fill = GridBagConstraints.HORIZONTAL;
+                    gbc.gridx = 0;
+                    gbc.gridy = 3;
+                    gbc.gridwidth = 2;
+                    addDialog.add(createBtn);
+
+                    gbc.gridx = 0;
+                    gbc.gridy = 4;
+                    gbc.gridwidth = 2;
+                    addDialog.add(cancelBtn);
+
+                    createBtn.addActionListener(new ActionListener(){
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                            String itemName = nameText.getText();
+                            String itemUrlString = urlText.getText();
+                            double itemPrice = Double.parseDouble(priceText.getText());
+
+                            try{
+                                URL itemUrl = new URL(itemUrlString);
+                                Item itemToAdd = new Item(itemName, itemUrl);
+                                
+                            }
+                            catch(MalformedURLException exception){
+                                exception.printStackTrace();
+                            }
+                        }
+                    });
+
+
+
+
                 case UPDATE_ALL:
                     sourceBtn.setText("Pressed");
                     sourceBtn.repaint();
