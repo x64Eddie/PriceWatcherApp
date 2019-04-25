@@ -1,4 +1,4 @@
-package UserInterface.GUI;
+package pricewatcher.UserInterface.GUI;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import io.reactivex.annotations.NonNull;
-import priceWatcherModel.Item;
+import pricewatcher.priceWatcherModel.Item;
 
 /**
  * Represents the View representation of the item, this is going to be the UI of

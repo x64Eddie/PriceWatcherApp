@@ -1,7 +1,7 @@
-package UserInterface.GUI;
+package pricewatcher.UserInterface.GUI;
 
-import priceWatcherModel.Item;
-import priceWatcherModel.ItemModel;
+import pricewatcher.priceWatcherModel.Item;
+import pricewatcher.priceWatcherModel.ItemModel;
 
 /**
  * Represetsn the Controller that is going to get the Items from the Item Model

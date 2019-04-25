@@ -1,6 +1,6 @@
-package UserInterface;
+package pricewatcher.UserInterface;
 
-import priceWatcherModel.Item;
+import pricewatcher.priceWatcherModel.Item;
 
 /**
  * This is going to define what the UI is going to display the information

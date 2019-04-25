@@ -1,4 +1,4 @@
-package priceWatcherModel;
+package pricewatcher.priceWatcherModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;

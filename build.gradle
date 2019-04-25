@@ -10,27 +10,28 @@
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java'
+    id 'application'
 }
 
-
+repositories{
+    jcenter()
+}
+mainClassName = 'pricewatcher.Main'
 
 jar{
     manifest {
         attributes(
-                'Main-Class': 'Main'
+                'Main-Class': 'pricewatcher.Main'
         )
     }
 }
-// sourceSets {
-//     main {
-//         java {
-//             srcDirs = ['src/java']
-//         }
-//         resources {
-//             srcDirs = ['src/resources']
-//         }
-//     }
-// }
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['src/res']
+        }
+    }
+}
 
 
 

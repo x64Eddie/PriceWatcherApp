@@ -1,5 +1,4 @@
-package UserInterface.GUI;
-
+package pricewatcher.UserInterface.GUI;
 import java.awt.BorderLayout;
 
 import javax.swing.DefaultListModel;
@@ -9,7 +8,7 @@ import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
 
-import priceWatcherModel.Item;
+import pricewatcher.priceWatcherModel.Item;
 
 
 /**

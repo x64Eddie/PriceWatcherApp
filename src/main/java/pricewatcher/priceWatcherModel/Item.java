@@ -1,4 +1,4 @@
-package priceWatcherModel;
+package pricewatcher.priceWatcherModel;
 
 import java.net.URL;
 import java.util.Date;

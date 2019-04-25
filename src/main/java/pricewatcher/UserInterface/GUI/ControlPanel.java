@@ -1,4 +1,4 @@
-package UserInterface.GUI;
+package pricewatcher.UserInterface.GUI;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;

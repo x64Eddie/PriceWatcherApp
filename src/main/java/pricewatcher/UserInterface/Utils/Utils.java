@@ -1,12 +1,12 @@
-package UserInterface.Utils;
+package pricewatcher.UserInterface.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import io.reactivex.annotations.NonNull;
-import priceWatcherModel.Item;
-import UserInterface.GUI.ItemComponent;
+import pricewatcher.priceWatcherModel.Item;
+import pricewatcher.UserInterface.GUI.ItemComponent;
 
 /**
  * Utils that other classes may need.

@@ -1,6 +1,6 @@
-package UserInterface;
+package pricewatcher.UserInterface;
 
-import priceWatcherModel.Item;
+import pricewatcher.priceWatcherModel.Item;
 
 public class ConsoleInterface implements UI {
 

@@ -1,5 +1,4 @@
-package UserInterface.GUI;
-
+package pricewatcher.UserInterface.GUI;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -18,9 +17,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
-import UserInterface.UI;
-import priceWatcherModel.Item;
-import priceWatcherModel.ItemModel;
+import pricewatcher.UserInterface.UI;
+import pricewatcher.priceWatcherModel.Item;
+import pricewatcher.priceWatcherModel.ItemModel;
 
 /**
  * JFrame that holds the PriceWatcher application

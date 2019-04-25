@@ -1,5 +1,4 @@
-package UserInterface.GUI;
-
+package pricewatcher.UserInterface.GUI;
 import java.awt.Color;
 import java.awt.Component;
 
@@ -7,7 +6,7 @@ import java.awt.Component;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 
-import priceWatcherModel.Item;
+import pricewatcher.priceWatcherModel.Item;
 
 /*
  * Custom renderer that is going to render a custom label for displaying the item
