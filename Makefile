@@ -3,4 +3,5 @@ all:
 	gradle build
 	gradle assemble
 	(cd ./build/libs/; java -jar PriceWatcherCS.jar)
-
+clean:
+	gradle clean
