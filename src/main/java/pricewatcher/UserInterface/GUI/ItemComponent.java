@@ -22,7 +22,7 @@ import pricewatcher.priceWatcherModel.Item;
 public class ItemComponent extends JPanel {
 
     private static final long serialVersionUID = 1L;
-    private final static String IMAGE_DIR = ".//src//resources//web.png";
+    private final static String IMAGE_DIR = ".//resources//web.png";//.//src//resources//
     private DecimalFormat formater;
     private DecimalFormat percentFormat;
     private Item item;
@@ -51,14 +51,14 @@ public class ItemComponent extends JPanel {
         // paintComponent(g);
         int x = 10, y =15;
         BufferedImage image;
-        try {                
-             image = ImageIO.read(new File(IMAGE_DIR).getAbsoluteFile());
-             g.drawImage(image, 0, 0,20,20, this); 
+        // try {                
+        //      image = ImageIO.read(getClass().getResource("main/Edit.png"));
+        //      g.drawImage(image, 0, 0,20,20, this); 
             
-         } catch (IOException ex) {
-              // handle exception...
-              ex.printStackTrace();
-         }
+        //  } catch (IOException ex) {
+        //       // handle exception...
+        //       ex.printStackTrace();
+        //  }
         x = 20; y = 30;
         //item.update();
         g.drawString(" Name:\t\t\t\t" + item.getName(), x, y);

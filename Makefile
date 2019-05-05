@@ -1,7 +1,7 @@
 all:
 	#sl
-	gradle build
-	gradle assemble
+	./gradlew build
+	./gradlew assemble
 	(cd ./build/libs/; java -jar PriceWatcherCS.jar)
 clean:
-	gradle clean
+	./gradlew clean

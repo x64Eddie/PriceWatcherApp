@@ -164,9 +164,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 case "Search":
                 case "FirstItem":
                 case "UpdateItem":
-                    ItemComponent itemComp = itemPanel.getSelectedComp();
-                    itemComp.getItem().update();
-                    itemComp.repaint();
+                    itemController.update();
                     break;
                 case "WebView":
                     try {

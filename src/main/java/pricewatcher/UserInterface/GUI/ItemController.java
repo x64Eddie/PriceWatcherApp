@@ -27,5 +27,9 @@ class ItemController{
         itemModel.addItems(item);
         itemPanel.addItem(item);
     }
+
+    public void update(){
+        itemPanel.updateItem();
+    }
     
 }
