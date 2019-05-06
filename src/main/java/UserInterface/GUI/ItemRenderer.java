@@ -12,6 +12,8 @@ import priceWatcherModel.Item;
 /*
  * Custom renderer that is going to render a custom label for displaying the item
  * in a JList.
+ * 
+ * 
  */
 class ItemRenderer extends ItemComponent implements ListCellRenderer<Item> {
 
