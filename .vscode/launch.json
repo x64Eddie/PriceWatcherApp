@@ -1,5 +1,12 @@
 {
     "configurations": [
+        
+    {
+        "type": "java",
+        "name": "Debug (Launch)",
+        "request": "launch",
+        "mainClass": ""
+    },
         {
             "type": "java",
             "name": "CodeLens (Launch) - Main",
@@ -18,7 +25,7 @@
             "type": "java",
             "name": "CodeLens (Launch) - Main",
             "request": "launch",
-            "mainClass": "priceWatcherConsole.Main",
+            "mainClass": "pricewatcher.Main",
             "projectName": "PriceWatcherCS"
         }
     ]
