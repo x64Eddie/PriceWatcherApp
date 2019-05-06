@@ -23,10 +23,10 @@ public class EbayPriceFinder extends PriceFinder {
             String line;
             while ((line = ((BufferedReader) data).readLine()) != null) {
                 if(line.contains("prcIsum")){
-                    Pattern p =  Pattern.compile("\\$\\d+\\.\\d{2}");
+                    Pattern p =  Pattern.compile("\\d+\\.\\d{2}");
                     Matcher m = p.matcher(line);
                     if(m.find()){
-                        double price = Double.parseDouble(m.group().replace("[^\\d.]", ""));
+                        double price = Double.parseDouble(m.group().replace("[^\\d^.]", ""));
                         super.listener.newPrice(price);
                     }
                 }

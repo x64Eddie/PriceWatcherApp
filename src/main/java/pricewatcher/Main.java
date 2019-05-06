@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import pricewatcher.UserInterface.UI;
+import pricewatcher.UserInterface.GUI.PriceWatcherJFrame;
 import pricewatcher.networking.EbayPriceFinder;
 import pricewatcher.networking.PriceFinder;
 import pricewatcher.networking.PriceListener;
@@ -12,8 +13,8 @@ import pricewatcher.networking.RequestState;
 public class Main {
     public static void main(String[] args) {
 
-        // UI currentUI = new PriceWatcherJFrame();
-        // currentUI.configureUI();
+         UI currentUI = new PriceWatcherJFrame();
+         currentUI.configureUI();
 
         URL url = null;
         try {
