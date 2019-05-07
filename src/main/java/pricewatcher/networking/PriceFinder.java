@@ -7,6 +7,8 @@ import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
 import javax.annotation.Nonnull;
@@ -54,9 +56,9 @@ public abstract class PriceFinder implements Runnable {
         BufferedReader in = new BufferedReader(reader);
         createItem(in);
 
-        if (con != null) {
+        //if (con != null) {
             con.disconnect();
-        }
+        //}
     }
 
     /**
@@ -89,8 +91,10 @@ public abstract class PriceFinder implements Runnable {
             e.printStackTrace();
             return null;
         }
-        host = host.toLowerCase();
-        switch(host){
+        Pattern p =  Pattern.compile("\\.\\w+\\.");
+        Matcher m = p.matcher(host.toLowerCase());
+        //TODO: patterns are not working
+        switch("ebay"){
             case "amazon":return new AmazonPriceFinder(url);
             case "ebay":return new EbayPriceFinder(url);
             case "bestbuy":return new BestBuyPriceFinder(url);

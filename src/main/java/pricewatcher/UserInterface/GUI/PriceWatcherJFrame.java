@@ -1,4 +1,5 @@
 package pricewatcher.UserInterface.GUI;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -18,6 +19,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import pricewatcher.UserInterface.UI;
+import pricewatcher.networking.PriceFinder;
+import pricewatcher.networking.PriceListener;
+import pricewatcher.networking.RequestState;
 import pricewatcher.priceWatcherModel.Item;
 import pricewatcher.priceWatcherModel.ItemModel;
 
@@ -39,16 +43,17 @@ public class PriceWatcherJFrame extends JFrame implements UI {
 
     private ItemModel itemModel;
     private ItemPanel itemPanel;
+    private ItemController controller;
 
     /** Create a new dialog. */
     public PriceWatcherJFrame() {
         this(DEFAULT_SIZE);
     }
 
-   /**
-    * Creates the JFrame for the PriceWatcher
-    * @param dim - the dimension of the JFrame
-    */
+    /**
+     * Creates the JFrame for the PriceWatcher
+     * @param dim - the dimension of the JFrame
+     */
     public PriceWatcherJFrame(Dimension dim) {
         super("Price Watcher");
         setSize(dim);
@@ -60,17 +65,41 @@ public class PriceWatcherJFrame extends JFrame implements UI {
         showMessage("Welcome!");
 
         itemModel = new ItemModel();
+        itemPanel = new ItemPanel();
+        controller = new ItemController(itemModel, itemPanel);
         try {
-            itemModel.addItems(new Item("Sony Tv", new URL(
-                    "https://www.bestbuy.com/site/samsung-65-class-led-nu8000-series-2160p-smart-4k-uhd-tv-with-hdr/6199828.p?skuId=6199828"),
-                    300, 200));
-        } catch (MalformedURLException e) {
+            // Example Item.
+            Item item = new Item("Sony Tv", new URL(
+                    "https://www.ebay.com/itm/Alien-7-Scale-Action-Figures-Ultimate-1986-Blue-Alien-Warrior-NECA/273527522662?_trkparms=aid%3D111001%26algo%3DREC.SEED%26ao%3D1%26asc%3D20180816085401%26meid%3Deb7ec4f5c4c344e5be278bf34472dd30%26pid%3D100970%26rk%3D1%26rkt%3D2%26mehot%3Dpp%26sd%3D273527522662%26itm%3D273527522662&_trksid=p2481888.c100970.m5481&_trkparms=pageci%3Af359db71-7069-11e9-80fa-74dbd18022fe%7Cparentrq%3A8ff89f5516a0ab670995e933ffe880ac%7Ciid%3A1"),
+                    300, 200);
+            PriceFinder priceFinder = PriceFinder.createFinder(item.getUrl());
+            priceFinder.setListener(new PriceListener() {
 
+                @Override
+                public void requestChanged(RequestState state) {
+                    switch(state){
+                        case ERROR:
+                        case DONE:
+                        case POP_ITEM:
+                        case IN_REQUEST:
+                        case IN_REQUEST_DONE:
+                    }
+                }
+
+                @Override
+                public void newPrice(double price) {
+                    item.setPrice(price);
+                    itemModel.addItems(item);
+                    itemPanel.addItem(item);
+                }
+
+            });
+            priceFinder.run();
+        } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        itemPanel = new ItemPanel();
-    }
 
+    }
 
     /** Show briefly the given string in the message bar. */
     private void showMessage(String msg) {
@@ -85,6 +114,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
             }
         }).start();
     }
+
     @Override
     public void configureUI() {
         setLayout(new BorderLayout());
@@ -181,9 +211,9 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                     editDialog.setLayout(elayout);
 
                     String eLabels[] = { "Name: ", "URL: ", "Price: " };
-                    JTextField etextFields[] = { new JTextField(citem.getName(),10),
-                         new JTextField(citem.getUrl().toString(),10),
-                         new JTextField(String.valueOf(citem.getCurrentPrice()),10) };
+                    JTextField etextFields[] = { new JTextField(citem.getName(), 10),
+                            new JTextField(citem.getUrl().toString(), 10),
+                            new JTextField(String.valueOf(citem.getCurrentPrice()), 10) };
                     for (int i = 0; i < eLabels.length; i++) {
                         JLabel label = new JLabel(eLabels[i]);
                         editDialog.add(label);
@@ -209,8 +239,9 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                     itemPanel.removeSelecItem();
                     break;
                 case "Info":
-                    JOptionPane.showMessageDialog(null, "Price Watcher © 2019\nBy; Eddie Herrera, Ian Hudson, and Aaron Mendez",
-                    "PriceWatcherInfo",JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,
+                            "Price Watcher © 2019\nBy; Eddie Herrera, Ian Hudson, and Aaron Mendez", "PriceWatcherInfo",
+                            JOptionPane.INFORMATION_MESSAGE);
                     break;
 
                 }

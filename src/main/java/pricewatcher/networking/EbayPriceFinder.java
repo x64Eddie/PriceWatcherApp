@@ -31,7 +31,7 @@ public class EbayPriceFinder extends PriceFinder {
                     }
                 }
             }
-            super.listener.newPrice(-1);
+            
         } catch (IOException e) {
             e.printStackTrace();
         }

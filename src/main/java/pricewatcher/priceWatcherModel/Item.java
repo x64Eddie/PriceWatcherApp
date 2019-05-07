@@ -79,4 +79,8 @@ public class Item {
     public boolean isNegative(){
         return !((startPrice - currentPrice)< 0);
     }
+
+    public void setPrice(double newPrice){
+        this.currentPrice = newPrice;
+    }
 }
