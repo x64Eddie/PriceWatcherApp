@@ -13,16 +13,16 @@ public class Item {
     
     private String name;
     private URL url;
-    private double currentPrice = 1200.00, startPrice = 1200.00;
+    private double currentPrice = -1, startPrice = -1;
     private Date date = new Date();
     private Random rand = new Random(3000);
 
     public Item(String name, URL url){
         this.name = name;
         this.url = url;
-        this.currentPrice = rand.nextInt(1000);
         
     }
+    
     Item(URL url){
         this.url = url;
     }

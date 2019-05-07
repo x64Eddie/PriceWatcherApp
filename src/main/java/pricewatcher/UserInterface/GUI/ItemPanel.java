@@ -68,12 +68,6 @@ public class ItemPanel extends JPanel implements SelectionListener {
         selectedComponent = itemComponent;
     }
 
-    /**
-     * Going to refresh the item that is selected.
-     */
-    public void updateItem(){
-        updateItem(jList.getSelectedIndex());
-    }
 
     public void updateItem(int index){
         Item item = listModel.getElementAt(index);
@@ -81,9 +75,28 @@ public class ItemPanel extends JPanel implements SelectionListener {
         listModel.set(index, item);
     }
 
+    public void updateItem(Item item , int index){
+        listModel.set(index, item);
+    }
+
+    public int itemSize(){
+        return listModel.getSize();
+    }
+
+    public Item getItemAt(int index){
+        return listModel.elementAt(index);
+    }
+
+
+
     public void updateAllItems(){
         for(int i = 0; i < listModel.getSize(); i++)updateItem(i);
     }
+
+    public int getSelectedIndex(){
+        return jList.getSelectedIndex();
+    }
+
 
 }
 /**

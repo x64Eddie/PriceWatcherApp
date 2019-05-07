@@ -19,9 +19,6 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import pricewatcher.UserInterface.UI;
-import pricewatcher.networking.PriceFinder;
-import pricewatcher.networking.PriceListener;
-import pricewatcher.networking.RequestState;
 import pricewatcher.priceWatcherModel.Item;
 import pricewatcher.priceWatcherModel.ItemModel;
 
@@ -41,7 +38,6 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     /** Message bar to display various messages. */
     private JLabel msgBar = new JLabel(" ");
 
-    private ItemModel itemModel;
     private ItemPanel itemPanel;
     private ItemController controller;
 
@@ -64,40 +60,8 @@ public class PriceWatcherJFrame extends JFrame implements UI {
         setResizable(false);
         showMessage("Welcome!");
 
-        itemModel = new ItemModel();
         itemPanel = new ItemPanel();
-        controller = new ItemController(itemModel, itemPanel);
-        try {
-            // Example Item.
-            Item item = new Item("Sony Tv", new URL(
-                    "https://www.ebay.com/itm/Alien-7-Scale-Action-Figures-Ultimate-1986-Blue-Alien-Warrior-NECA/273527522662?_trkparms=aid%3D111001%26algo%3DREC.SEED%26ao%3D1%26asc%3D20180816085401%26meid%3Deb7ec4f5c4c344e5be278bf34472dd30%26pid%3D100970%26rk%3D1%26rkt%3D2%26mehot%3Dpp%26sd%3D273527522662%26itm%3D273527522662&_trksid=p2481888.c100970.m5481&_trkparms=pageci%3Af359db71-7069-11e9-80fa-74dbd18022fe%7Cparentrq%3A8ff89f5516a0ab670995e933ffe880ac%7Ciid%3A1"),
-                    300, 200);
-            PriceFinder priceFinder = PriceFinder.createFinder(item.getUrl());
-            priceFinder.setListener(new PriceListener() {
-
-                @Override
-                public void requestChanged(RequestState state) {
-                    switch(state){
-                        case ERROR:
-                        case DONE:
-                        case POP_ITEM:
-                        case IN_REQUEST:
-                        case IN_REQUEST_DONE:
-                    }
-                }
-
-                @Override
-                public void newPrice(double price) {
-                    item.setPrice(price);
-                    itemModel.addItems(item);
-                    itemPanel.addItem(item);
-                }
-
-            });
-            priceFinder.run();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+        controller = new ItemController(new ItemModel(), itemPanel);
 
     }
 
@@ -152,7 +116,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 switch (buttonPressed) {
 
                 case "UpdateAll":
-                    itemPanel.updateAllItems();
+                    controller.updateAllItems();
                     break;
                 case "AddItem":
                     JDialog addItemDialog = new JDialog();
@@ -176,7 +140,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                     accept.addActionListener((e) -> {
                         try {
                             Item item = new Item(textFields[0].getText(), new URL(textFields[1].getText()));
-                            itemPanel.addItem(item);
+                            controller.addItem(item);
                             addItemDialog.dispose();
                         } catch (MalformedURLException e1) {
                             e1.printStackTrace();
@@ -191,18 +155,18 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 case "Search":
                 case "FirstItem":
                 case "UpdateItem":
-                    itemPanel.updateItem();
+                    controller.updateSelectedItem();
                     break;
                 case "WebView":
                     try {
                         java.awt.Desktop.getDesktop()
-                                .browse(java.net.URI.create(itemPanel.getCurrentItem().getUrl().toString()));
+                                .browse(java.net.URI.create(controller.getCurrentItem().getUrl().toString()));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                     break;
                 case "Edit":
-                    Item citem = itemPanel.getCurrentItem();
+                    Item citem = controller.getCurrentItem();
                     JDialog editDialog = new JDialog();
                     editDialog.setResizable(false);
                     editDialog.setSize(new Dimension(200, 200));
@@ -224,10 +188,10 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                     editDialog.add(eaccept);
                     ecancel.addActionListener((e) -> editDialog.dispose());
                     eaccept.addActionListener((e) -> {
-                        itemPanel.removeSelecItem();
+                        controller.removeSelecItem();
                         try {
                             Item item = new Item(etextFields[0].getText(), new URL(etextFields[1].getText()));
-                            itemPanel.addItem(item);
+                            controller.addItem(item);
                             editDialog.dispose();
                         } catch (MalformedURLException e1) {
                             e1.printStackTrace();
@@ -236,7 +200,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                     editDialog.setVisible(true);
                     break;
                 case "Remove":
-                    itemPanel.removeSelecItem();
+                    controller.removeSelecItem();
                     break;
                 case "Info":
                     JOptionPane.showMessageDialog(null,

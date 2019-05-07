@@ -24,6 +24,13 @@ public void addItems(Item... items){
     this.items.addAll(Arrays.asList(items));
 }
 
+public void addItem(Item item, int index){
+    items.add(index, item);
+}
+
+public void updateItem(Item item, int index){
+    items.set(index, item);
+}
 /**
  * Gets the items that are from a specific store, for example, Ebay or BestBuy.
  * we are going to get the store by looking at the URL then extract from what store
@@ -53,7 +60,6 @@ public List<Item> getItems (){
  * Updates the price of the items
  */
 public void update(){
-    
     for (Item item : this.items)item.update();
 }
 
