@@ -84,21 +84,20 @@ public abstract class PriceFinder implements Runnable {
      * @return - the finder that we are going to use to comunicate with the price.
      */
     public static PriceFinder createFinder(URL url) {
-        String host;
-        try {
-           host = url.toURI().getHost();
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
+        Pattern p =  Pattern.compile("www.(\\w+).com");
+        Matcher m = p.matcher(url.toString().toLowerCase());
+        if(m.find()){
+            switch(m.group(1)){
+                case "amazon":return new AmazonPriceFinder(url);
+                case "ebay":return new EbayPriceFinder(url);
+                case "bestbuy":return new BestBuyPriceFinder(url);
+                default: return new AmazonPriceFinder(url);
+            }
+        }else{
+            //Invalid URL
+            System.out.println("Invalid URL");
             return null;
         }
-        Pattern p =  Pattern.compile("\\.\\w+\\.");
-        Matcher m = p.matcher(host.toLowerCase());
-        //TODO: patterns are not working
-        switch("ebay"){
-            case "amazon":return new AmazonPriceFinder(url);
-            case "ebay":return new EbayPriceFinder(url);
-            case "bestbuy":return new BestBuyPriceFinder(url);
-            default: return new AmazonPriceFinder(url);
-        }
+        
     }
 }
