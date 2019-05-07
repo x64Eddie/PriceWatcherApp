@@ -68,8 +68,21 @@ public class ItemPanel extends JPanel implements SelectionListener {
         selectedComponent = itemComponent;
     }
 
+    /**
+     * Going to refresh the item that is selected.
+     */
     public void updateItem(){
-        jList.getModel().getElementAt(jList.getSelectedIndex());
+        updateItem(jList.getSelectedIndex());
+    }
+
+    public void updateItem(int index){
+        Item item = listModel.getElementAt(index);
+        item.update();
+        listModel.set(index, item);
+    }
+
+    public void updateAllItems(){
+        for(int i = 0; i < listModel.getSize(); i++)updateItem(i);
     }
 
 }

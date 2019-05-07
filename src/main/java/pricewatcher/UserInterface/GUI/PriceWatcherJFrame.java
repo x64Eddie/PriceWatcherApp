@@ -37,10 +37,8 @@ public class PriceWatcherJFrame extends JFrame implements UI {
     /** Message bar to display various messages. */
     private JLabel msgBar = new JLabel(" ");
 
-    private ItemController itemController;
     private ItemModel itemModel;
     private ItemPanel itemPanel;
-    private ItemController controller;
 
     /** Create a new dialog. */
     public PriceWatcherJFrame() {
@@ -71,7 +69,6 @@ public class PriceWatcherJFrame extends JFrame implements UI {
             e.printStackTrace();
         }
         itemPanel = new ItemPanel();
-        controller = new ItemController(itemModel, itemPanel);
     }
 
 
@@ -125,7 +122,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 switch (buttonPressed) {
 
                 case "UpdateAll":
-
+                    itemPanel.updateAllItems();
                     break;
                 case "AddItem":
                     JDialog addItemDialog = new JDialog();
@@ -149,7 +146,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                     accept.addActionListener((e) -> {
                         try {
                             Item item = new Item(textFields[0].getText(), new URL(textFields[1].getText()));
-                            controller.addItem(item);
+                            itemPanel.addItem(item);
                             addItemDialog.dispose();
                         } catch (MalformedURLException e1) {
                             e1.printStackTrace();
@@ -164,7 +161,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                 case "Search":
                 case "FirstItem":
                 case "UpdateItem":
-                    itemController.update();
+                    itemPanel.updateItem();
                     break;
                 case "WebView":
                     try {
@@ -200,7 +197,7 @@ public class PriceWatcherJFrame extends JFrame implements UI {
                         itemPanel.removeSelecItem();
                         try {
                             Item item = new Item(etextFields[0].getText(), new URL(etextFields[1].getText()));
-                            controller.addItem(item);
+                            itemPanel.addItem(item);
                             editDialog.dispose();
                         } catch (MalformedURLException e1) {
                             e1.printStackTrace();

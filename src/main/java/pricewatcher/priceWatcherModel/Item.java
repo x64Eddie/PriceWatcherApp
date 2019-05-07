@@ -10,6 +10,7 @@ import java.util.Random;
  */
 public class Item {
     
+    
     private String name;
     private URL url;
     private double currentPrice = 1200.00, startPrice = 1200.00;

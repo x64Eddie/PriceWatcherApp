@@ -3,6 +3,7 @@ package pricewatcher;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
 import pricewatcher.UserInterface.UI;
 import pricewatcher.UserInterface.GUI.PriceWatcherJFrame;
 import pricewatcher.networking.EbayPriceFinder;
@@ -38,6 +39,6 @@ public class Main {
 
         });
         new Thread(finder).start();
-        // currentUI.draw();
+        
     }
 }

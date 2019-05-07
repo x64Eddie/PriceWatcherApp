@@ -53,7 +53,7 @@ public List<Item> getItems (){
  * Updates the price of the items
  */
 public void update(){
-    //TODO connect it with PriceFinder to get the price from the URL
+    //TODO: connect it with PriceFinder to get the price from the URL
     for (Item item : this.items)item.update();
 }
 

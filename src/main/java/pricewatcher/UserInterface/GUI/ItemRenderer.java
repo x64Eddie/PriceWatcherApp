@@ -24,7 +24,7 @@ class ItemRenderer extends ItemComponent implements ListCellRenderer<Item> {
         setItem(item);
         if (isSelected){
             if(selectionListener != null)selectionListener.selectionMade(this);
-            setBackground(new Color(0xFFFFCC));item.update();
+            setBackground(new Color(0xFFFFCC));
 
         }
         else setBackground(list.getBackground());

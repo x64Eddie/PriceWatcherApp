@@ -6,6 +6,7 @@ plugins {
 
 repositories{
     jcenter()
+    mavenCentral()
 }
 mainClassName = 'pricewatcher.Main'
 
@@ -32,6 +33,7 @@ sourceSets {
 dependencies {
     implementation 'com.google.guava:guava:23.0'
     implementation "io.reactivex.rxjava2:rxjava:2.2.6"
+    compile 'com.google.code.gson:gson:2.2.4'
 
     testImplementation 'junit:junit:4.12'
 }
